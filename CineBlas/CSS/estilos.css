@@ -1,412 +1,162 @@
-<<<<<<< HEAD
-/* Estilo personalizado para el color rojo de fondo */
-        .navbar-cinerostar {
-            background-color: #CC0000; /* Un rojo intenso similar al de la imagen */
-        }
-        /* Estilo para los enlaces de la barra de navegación */
-        .navbar-cinerostar .nav-link {
-            color: white !important; /* Texto blanco para los enlaces */
-            font-weight: 500; /* Un peso de fuente ligeramente más grueso */
-            padding-bottom: 0.5rem; /* Espacio inferior para la línea amarilla */
-            transition: border-bottom 0.2s ease-in-out;
-        }
-        /* Estilo para simular la línea amarilla activa en 'Inicio' */
-        .navbar-cinerostar .nav-link.active {
-            border-bottom: 3px solid #FFCC00; /* Línea amarilla brillante */
-        }
-
-        /* Estilo del texto del logo para fines de ejemplo, ya que el logo es una imagen */
-        .logo-text {
-            color: white;
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin-left: -5px; /* Ajuste visual */
-        }
-        /* Para simular la estructura del logo, aunque lo ideal sería usar una imagen */
-        .logo-container {
-            display: flex;
-            align-items: center;
-        }
-        .logo-text-small {
-            font-size: 0.7rem;
-            font-weight: normal;
-            display: block;
-            margin-top: -8px;
-            letter-spacing: 2px;
-        }
-        /* Color del logo amarillo/dorado */
-        .yellow-logo {
-                    color: #FFCC00;
-                    font-size: 2.5rem;
-                    line-height: 1;
-        }
-
-
-
-
-
-        body {
-            background-color: #f8f9fa; /* Fondo blanco/gris claro */
-            padding-top: 56px;
-        }
-        .navbar {
-            background-color: #e30613; /* Rojo distintivo */
-        }
-        .nav-link {
-            color: white !important;
-            font-weight: 500;
-        }
-        .movie-grid-container {
-            max-width: 1200px;
-            margin-bottom: 2rem; /* separador entre Películas y la sección sombreada */
-        }
-        /* Estilos para los botones de pestañas (Tabs) */
-        .nav-pills .nav-link {
-            background-color: transparent;
-            color: #495057; /* Texto gris por defecto */
-            border-radius: 20px;
-            font-weight: 500;
-            padding: 8px 15px;
-            margin-right: 10px;
-        }
-        .nav-pills .nav-link.active {
-            background-color: #38761d; /* Fondo verde para el activo */
-            color: white;
-        }
-        .section-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 30px;
-        }
-        .movie-card img {
-            width: 100%;
-            height: auto;
-            border-radius: 4px;
-        }
-
-        /* Carousel: forzar que todas las imágenes tengan la misma proporción que promo_2 (1696x608) */
-        #carouselExampleIndicators {
-            /* Si el navegador soporta aspect-ratio para el contenedor */
-            width: 100%;
-        }
-        #carouselExampleIndicators .carousel-item {
-            aspect-ratio: 1696 / 608; /* proporción exacta */
-            max-height: 608px; /* altura máxima igual a la de promo_2 */
-            overflow: hidden;
-        }
-        #carouselExampleIndicators .carousel-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* recorta/centra la imagen para que encaje exactamente */
-            display: block;
-        }
-
-        /* Ajustes responsivos: limitar la altura en pantallas más pequeñas */
-        @media (max-width: 1200px) {
-            #carouselExampleIndicators .carousel-item { max-height: 420px; }
-        }
-        @media (max-width: 768px) {
-            #carouselExampleIndicators .carousel-item { max-height: 300px; }
-        }
-        @media (max-width: 480px) {
-            #carouselExampleIndicators .carousel-item { max-height: 200px; }
-        }
-
-
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        /* Sección de Servicios Corporativos (Fondo verde oscuro de la imagen) */
-        .corporate-services {
-            background-color: #274737; /* Verde oscuro */
-            color: #fff;
-            padding: 40px 0 60px; /* aumentar espacio superior/inferior para separarlo mejor */
-        }
-        .service-item {
-            text-align: center;
-            padding: 10px;
-            /* Estilo para que el texto sea más grande y blanco */
-            font-size: 1.1rem;
-            font-weight: 500;
-        }
-        /* Igualar tamaño de inicio_2, inicio_3, inicio_4 al de inicio_1 (588x572) visualmente */
-        .service-img {
-            width: 588px;
-            height: 572px;
-            object-fit: cover;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* En pantallas más pequeñas hacer responsive y quitar dimensiones fijas */
-        @media (max-width: 992px) {
-            .service-img { width: 100%; height: auto; }
-        }
-        /* Sección de Contacto (Fondo blanco/gris claro de la imagen) */
-        .contact-section {
-            background-color: #f8f9fa; /* Fondo claro */
-            padding: 60px 0;
-        }
-        .contact-form-container {
-            max-width: 700px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        /* Estilo para los campos de formulario (verde claro) */
-        .form-control-cinestar {
-            background-color: #e6f1e6; /* Verde muy claro */
-            border: none;
-            padding: 10px;
-        }
-        .form-control-cinestar::placeholder {
-            color: #777;
-        }
-        /* Estilo del botón "Enviar" */
-        .btn-enviar {
-            background-color: #212529; /* Negro/Gris oscuro */
-            color: white;
-            padding: 10px 30px;
-            border-radius: 4px;
-        }
-        /* Pie de Página (Footer) */
-        .main-footer {
-            background-color: #274737; /* El mismo verde oscuro del inicio */
-            color: #ccc;
-            padding: 30px 0;
-            font-size: 0.9rem;
-        }
-        .main-footer a {
-            color: #ccc;
-            text-decoration: none;
-        }
-        .main-footer a:hover {
-            color: #fff;
-        }
-
-/* 1. Establece un tamaño fijo para todos los contenedores */
-.item-servicio {
-    /* Ajusta estos valores para que coincidan con el ancho y alto del primer elemento */
-    width: 300px; 
-    height: 250px; 
-    /* Esto es importante si el contenido interno puede sobresalir */
-    overflow: hidden; 
+body {
+    background-color: #87CEEB; /* Mismo celeste que .btn-enviar */
+    color: #f9f8f8; /* Texto negro para buena legibilidad sobre celeste */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
 }
 
-/* 2. Asegura que la imagen interna llene completamente el contenedor */
-.item-servicio img {
-    width: 100%;
-    height: 100%;
-    /* CLAVE: Esto hará que la imagen cubra el área sin verse estirada, 
-       pero recortará lo que no quepa (como la cartelera vertical y la activación). */
-    object-fit: cover; 
-=======
-/* Estilo personalizado para el color rojo de fondo */
-        .navbar-cinerostar {
-            background-color: #CC0000; /* Un rojo intenso similar al de la imagen */
-        }
-        /* Estilo para los enlaces de la barra de navegación */
-        .navbar-cinerostar .nav-link {
-            color: white !important; /* Texto blanco para los enlaces */
-            font-weight: 500; /* Un peso de fuente ligeramente más grueso */
-            padding-bottom: 0.5rem; /* Espacio inferior para la línea amarilla */
-            transition: border-bottom 0.2s ease-in-out;
-        }
-        /* Estilo para simular la línea amarilla activa en 'Inicio' */
-        .navbar-cinerostar .nav-link.active {
-            border-bottom: 3px solid #FFCC00; /* Línea amarilla brillante */
-        }
-
-        /* Estilo del texto del logo para fines de ejemplo, ya que el logo es una imagen */
-        .logo-text {
-            color: white;
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin-left: -5px; /* Ajuste visual */
-        }
-        /* Para simular la estructura del logo, aunque lo ideal sería usar una imagen */
-        .logo-container {
-            display: flex;
-            align-items: center;
-        }
-        .logo-text-small {
-            font-size: 0.7rem;
-            font-weight: normal;
-            display: block;
-            margin-top: -8px;
-            letter-spacing: 2px;
-        }
-        /* Color del logo amarillo/dorado */
-        .yellow-logo {
-                    color: #FFCC00;
-                    font-size: 2.5rem;
-                    line-height: 1;
-        }
-
-
-
-
-
-        body {
-            background-color: #f8f9fa; /* Fondo blanco/gris claro */
-            padding-top: 56px;
-        }
-        .navbar {
-            background-color: #e30613; /* Rojo distintivo */
-        }
-        .nav-link {
-            color: white !important;
-            font-weight: 500;
-        }
-        .movie-grid-container {
-            max-width: 1200px;
-            margin-bottom: 2rem; /* separador entre Películas y la sección sombreada */
-        }
-        /* Estilos para los botones de pestañas (Tabs) */
-        .nav-pills .nav-link {
-            background-color: transparent;
-            color: #495057; /* Texto gris por defecto */
-            border-radius: 20px;
-            font-weight: 500;
-            padding: 8px 15px;
-            margin-right: 10px;
-        }
-        .nav-pills .nav-link.active {
-            background-color: #38761d; /* Fondo verde para el activo */
-            color: white;
-        }
-        .section-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 30px;
-        }
-        .movie-card img {
-            width: 100%;
-            height: auto;
-            border-radius: 4px;
-        }
-
-        /* Carousel: forzar que todas las imágenes tengan la misma proporción que promo_2 (1696x608) */
-        #carouselExampleIndicators {
-            /* Si el navegador soporta aspect-ratio para el contenedor */
-            width: 100%;
-        }
-        #carouselExampleIndicators .carousel-item {
-            aspect-ratio: 1696 / 608; /* proporción exacta */
-            max-height: 608px; /* altura máxima igual a la de promo_2 */
-            overflow: hidden;
-        }
-        #carouselExampleIndicators .carousel-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* recorta/centra la imagen para que encaje exactamente */
-            display: block;
-        }
-
-        /* Ajustes responsivos: limitar la altura en pantallas más pequeñas */
-        @media (max-width: 1200px) {
-            #carouselExampleIndicators .carousel-item { max-height: 420px; }
-        }
-        @media (max-width: 768px) {
-            #carouselExampleIndicators .carousel-item { max-height: 300px; }
-        }
-        @media (max-width: 480px) {
-            #carouselExampleIndicators .carousel-item { max-height: 200px; }
-        }
-
-
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-        /* Sección de Servicios Corporativos (Fondo verde oscuro de la imagen) */
-        .corporate-services {
-            background-color: #274737; /* Verde oscuro */
-            color: #fff;
-            padding: 40px 0 60px; /* aumentar espacio superior/inferior para separarlo mejor */
-        }
-        .service-item {
-            text-align: center;
-            padding: 10px;
-            /* Estilo para que el texto sea más grande y blanco */
-            font-size: 1.1rem;
-            font-weight: 500;
-        }
-        /* Igualar tamaño de inicio_2, inicio_3, inicio_4 al de inicio_1 (588x572) visualmente */
-        .service-img {
-            width: 588px;
-            height: 572px;
-            object-fit: cover;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        /* En pantallas más pequeñas hacer responsive y quitar dimensiones fijas */
-        @media (max-width: 992px) {
-            .service-img { width: 100%; height: auto; }
-        }
-        /* Sección de Contacto (Fondo blanco/gris claro de la imagen) */
-        .contact-section {
-            background-color: #f8f9fa; /* Fondo claro */
-            padding: 60px 0;
-        }
-        .contact-form-container {
-            max-width: 700px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        /* Estilo para los campos de formulario (verde claro) */
-        .form-control-cinestar {
-            background-color: #e6f1e6; /* Verde muy claro */
-            border: none;
-            padding: 10px;
-        }
-        .form-control-cinestar::placeholder {
-            color: #777;
-        }
-        /* Estilo del botón "Enviar" */
-        .btn-enviar {
-            background-color: #212529; /* Negro/Gris oscuro */
-            color: white;
-            padding: 10px 30px;
-            border-radius: 4px;
-        }
-        /* Pie de Página (Footer) */
-        .main-footer {
-            background-color: #274737; /* El mismo verde oscuro del inicio */
-            color: #ccc;
-            padding: 30px 0;
-            font-size: 0.9rem;
-        }
-        .main-footer a {
-            color: #ccc;
-            text-decoration: none;
-        }
-        .main-footer a:hover {
-            color: #fff;
-        }
-
-/* 1. Establece un tamaño fijo para todos los contenedores */
-.item-servicio {
-    /* Ajusta estos valores para que coincidan con el ancho y alto del primer elemento */
-    width: 300px; 
-    height: 250px; 
-    /* Esto es importante si el contenido interno puede sobresalir */
-    overflow: hidden; 
+.movie-grid-container {
+    max-width: 1200px;
+    margin-bottom: 2rem;
 }
 
-/* 2. Asegura que la imagen interna llene completamente el contenedor */
-.item-servicio img {
+.movie-card {
+    background-color: #000000;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #333;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.movie-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+}
+
+.movie-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+
+.movie-card .movie-info {
+    padding: 8px;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.movie-card .movie-info p {
+    color: #ffffff;
+    margin: 0;
+    padding: 4px 0;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.nav-pills .nav-link {
+    background-color: transparent;
+    color: #000000;
+    border-radius: 20px;
+    padding: 8px 15px;
+    margin-right: 10px;
+    border: 1px solid #333;
+}
+
+.nav-pills .nav-link.active {
+    background-color: #38761d;
+    color: white;
+}
+
+#carouselExampleIndicators {
+    width: 100%;
+}
+
+#carouselExampleIndicators .carousel-item {
+    aspect-ratio: 1696 / 608;
+    max-height: 608px;
+    overflow: hidden;
+}
+
+#carouselExampleIndicators .carousel-item img {
     width: 100%;
     height: 100%;
-    /* CLAVE: Esto hará que la imagen cubra el área sin verse estirada, 
-       pero recortará lo que no quepa (como la cartelera vertical y la activación). */
-    object-fit: cover; 
->>>>>>> 9c05aef762bf957b0c616baf1317f69fb9d96608
+    object-fit: cover;
+    display: block;
+}
+
+.contact-section {
+    background-color: #222222;
+    padding: 60px 0;
+    color: #ffffff;
+}
+
+.contact-form-container {
+    background-color: #2a2a2a;
+    border-radius: 8px;
+    padding: 30px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.form-control-cinestar {
+    background-color: #333333;
+    border: 1px solid #444444;
+    color: #ffffff;
+    padding: 10px;
+}
+
+.btn-enviar {
+    background-color: #ffffff; /* Celeste (mismo que body) */
+    color: #ffffff;
+    padding: 10px 30px;
+    border-radius: 4px;
+}
+
+.main-footer {
+    background-color: #000000;
+    color: #ccc;
+    padding: 30px 0;
+    font-size: 0.9rem;
+    border-top: 1px solid #333;
+}
+
+.main-footer a {
+    color: #ccc;
+    text-decoration: none;
+}
+
+.main-footer a:hover {
+    color: #fff;
+}
+
+@media (max-width: 1200px) {
+    #carouselExampleIndicators .carousel-item { max-height: 420px; }
+}
+
+@media (max-width: 768px) {
+    #carouselExampleIndicators .carousel-item { max-height: 300px; }
+}
+
+@media (max-width: 480px) {
+    #carouselExampleIndicators .carousel-item { max-height: 200px; }
+}
+.navbar-cinerostar {
+    background-color: #CC0000 !important;
+}
+
+.navbar-cinerostar .nav-link {
+    color: white !important;
+    font-weight: 500;
+    padding-bottom: 0.5rem;
+}
+
+.navbar-cinerostar .nav-link.active {
+    border-bottom: 3px solid #FFCC00;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.site-logo {
+    width: 400px;
+    height: 110px;
+    object-fit: contain;
 }

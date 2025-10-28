@@ -1,0 +1,217 @@
+/* Estilos generales */
+body {
+    background-color: #f8f9fa;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #000000;
+}
+
+/* Estilos de la barra de navegación */
+.navbar-cinerostar {
+    background-color: #CC0000 !important;
+}
+
+.navbar-cinerostar .nav-link {
+    color: white !important;
+    font-weight: 500;
+    padding-bottom: 0.5rem;
+}
+
+.navbar-cinerostar .nav-link.active {
+    border-bottom: 3px solid #FFCC00;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.site-logo {
+    width: 400px;
+    height: 110px;
+    object-fit: contain;
+}
+
+/* Estilos de componentes comunes */
+.contact-section {
+    background-color: #222222;
+    padding: 60px 0;
+    color: #ffffff;
+}
+
+.contact-form-container {
+    background-color: #2a2a2a;
+    border-radius: 8px;
+    padding: 30px;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.main-footer {
+    background-color: #000000;
+    color: #ccc;
+    padding: 30px 0;
+    font-size: 0.9rem;
+    border-top: 1px solid #333;
+}
+
+.main-footer a {
+    color: #ccc;
+    text-decoration: none;
+}
+
+.main-footer a:hover {
+    color: #fff;
+}
+
+/* Estilo para la Pantalla del Cine */
+.pantalla {
+    background-color: #f8f9fa;
+    border-color: #ccc !important;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Contenedor principal del mapa de asientos */
+.seat-map-container {
+    max-width: 700px; 
+    margin: 0 auto;
+    overflow-x: auto; 
+}
+
+/* Estilo para un asiento (el círculo) */
+.seat {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background-color: #ccc;
+    border: 1px solid #aaa;
+    margin: 3px; 
+    display: inline-block;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    position: relative; 
+}
+
+/* Estilo para un asiento seleccionado */
+.seat.selected {
+    background-color: #4CAF50; /* Verde */
+    border-color: #388E3C;
+}
+
+/* Contenedor de una fila de asientos */
+.seat-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px; 
+}
+
+/* Etiquetas de fila (letras) */
+.row-label {
+    width: 20px;
+    font-weight: bold;
+    text-align: right;
+    margin-right: 5px;
+}
+
+/* Contenedor para las filas de asientos y las etiquetas */
+.seat-grid {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+/* Espacio de pasillo simulado */
+.aisle-spacer {
+    width: 20px; 
+    height: 25px;
+    margin: 3px;
+    display: inline-block;
+}
+
+/* Contenedor de las etiquetas de fila (letras P a A) */
+.row-labels-right {
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+}
+
+/* Eliminado: ya no se simula visualmente una butaca pintada por CSS (punto en J05). */
+
+/* Estilos para el control de cantidad de snacks/tickets */
+.quantity-control {
+    display: flex;
+    align-items: center;
+}
+
+.quantity-control button {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #ccc;
+    background-color: #f8f9fa;
+    cursor: pointer;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.quantity-display {
+    width: 30px;
+    text-align: center;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    height: 30px;
+    line-height: 30px;
+    margin: 0 -1px; 
+}
+
+/* Estilos de los ítems de snacks (para replicar las tarjetas) */
+.snack-item {
+    border: 1px solid #eee;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+/* Estilo para las pestañas de snacks */
+.nav-tabs .nav-link {
+    color: #6c757d;
+    font-weight: bold;
+    border-radius: 0;
+    border: none;
+}
+
+.nav-tabs .nav-link.active {
+    color: #dc3545; /* Rojo de Cinestar/Cineplanet */
+    border-bottom: 3px solid #dc3545;
+    background-color: transparent;
+}
+.navbar-cinerostar {
+    background-color: #CC0000 !important;
+}
+
+.navbar-cinerostar .nav-link {
+    color: white !important;
+    font-weight: 500;
+    padding-bottom: 0.5rem;
+}
+
+.navbar-cinerostar .nav-link.active {
+    border-bottom: 3px solid #FFCC00;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.site-logo {
+    width: 400px;
+    height: 110px;
+    object-fit: contain;
+}

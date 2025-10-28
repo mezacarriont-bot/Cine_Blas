@@ -1,258 +1,153 @@
-<<<<<<< HEAD
-/* Estilo personalizado para el color rojo de fondo */
-        .navbar-cinerostar {
-            background-color: #CC0000; /* Un rojo intenso similar al de la imagen */
-        }
-        /* Estilo para los enlaces de la barra de navegación */
-        .navbar-cinerostar .nav-link {
-            color: white !important; /* Texto blanco para los enlaces */
-            font-weight: 500; /* Un peso de fuente ligeramente más grueso */
-            padding-bottom: 0.5rem; /* Espacio inferior para la línea amarilla */
-            transition: border-bottom 0.2s ease-in-out;
-        }
-        /* Estilo para simular la línea amarilla activa en 'Inicio' */
-        .navbar-cinerostar .nav-link.active {
-            border-bottom: 3px solid #FFCC00; /* Línea amarilla brillante */
-        }
+/* ======================== */
+/* ESTILOS DE NAVEGACIÓN (CINEBLAST) */
+/* ======================== */
 
-        /* Estilo del texto del logo para fines de ejemplo, ya que el logo es una imagen */
-        .logo-text {
-            color: white;
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin-left: -5px; /* Ajuste visual */
-        }
-        /* Para simular la estructura del logo, aunque lo ideal sería usar una imagen */
-        .logo-container {
-            display: flex;
-            align-items: center;
-        }
-        .logo-text-small {
-            font-size: 0.7rem;
-            font-weight: normal;
-            display: block;
-            margin-top: -8px;
-            letter-spacing: 2px;
-        }
-        /* Color del logo amarillo/dorado */
-        .yellow-logo {
-            color: #FFCC00;
-        }
+.navbar-cinerostar {
+    background-color: #CC0000 !important; /* Rojo oscuro principal */
+    min-height: 60px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
 
+.logo-container {
+    display: flex;
+    align-items: center;
+}
 
-        
+.site-logo {
+    width: 400px;
+    height: 110px;
+    object-fit: contain;
+}
 
+.nav-link {
+    color: white !important;
+    font-weight: 500;
+    padding-bottom: 0.5rem;
+    margin: 0 10px;
+    transition: color 0.3s, border-bottom 0.3s;
+}
 
+.nav-link:hover {
+    color: #FFCC00 !important; /* Amarillo en hover */
+}
 
-        /* ESTILOS DE TEMA (Fondo claro como en la imagen) */
-        body {
-            background-color: #f8f8f8; /* Fondo blanco/gris muy claro */
-            font-family: Arial, sans-serif;
-        }
-        /* CABECERA ROJA (Simulando la barra superior de Cinestar) */
-        .top-header {
-            background-color: #a0201d; /* Rojo */
-            height: 50px;
-            margin-bottom: 20px;
-        }
-        /* Título Principal */
-        .page-title {
-            color: #212529; /* Texto oscuro */
-            font-weight: bold;
-            margin-bottom: 30px;
-        }
-        /* Tarjeta de Cine */
-        .cinema-card {
-            background-color: white;
-            border: 1px solid #e0e0e0;
-            border-radius: 4px;
-            overflow: hidden;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-        /* Imagen del logo de CineBlas en la tarjeta */
-        .cinema-image-container {
-            height: 150px; /* Altura fija para la imagen */
-            overflow: hidden;
-            background-color: #a0201d; /* Fondo rojo de la imagen */
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .cinema-logo-placeholder {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-image: url('URL_DE_IMAGEN_FONDO_ROJO_CINEBLAS.jpg'); /* Reemplazar */
-            background-size: cover;
-            background-position: center;
-        }
-        /* Contenido del texto de la tarjeta */
-        .cinema-info {
-            padding: 15px;
-        }
-        .cinema-name {
-            font-weight: bold;
-            color: #212529;
-            margin-bottom: 5px;
-        }
-        .cinema-address {
-            font-size: 0.9rem;
-            color: #555;
-            margin-bottom: 10px;
-        }
-        /* Formato 2D/3D */
-        .cinema-format-label {
-            display: inline-block;
-            background-color: #38761d; /* Verde oscuro (el color usado en otros filtros) */
-            color: white;
-            padding: 2px 8px;
-            border-radius: 3px;
-            font-size: 0.8rem;
-            margin-bottom: 15px;
-        }
-        /* Botón "Ver en mapa" */
-        .btn-mapa {
-            background-color: white;
-            color: #a0201d; /* Rojo */
-            border: 1px solid #a0201d;
-            border-radius: 4px;
-            padding: 8px 15px;
-            width: 100%;
-        }
-        .btn-mapa:hover {
-            background-color: #a0201d;
-            color: white;
-=======
-/* Estilo personalizado para el color rojo de fondo */
-        .navbar-cinerostar {
-            background-color: #CC0000; /* Un rojo intenso similar al de la imagen */
-        }
-        /* Estilo para los enlaces de la barra de navegación */
-        .navbar-cinerostar .nav-link {
-            color: white !important; /* Texto blanco para los enlaces */
-            font-weight: 500; /* Un peso de fuente ligeramente más grueso */
-            padding-bottom: 0.5rem; /* Espacio inferior para la línea amarilla */
-            transition: border-bottom 0.2s ease-in-out;
-        }
-        /* Estilo para simular la línea amarilla activa en 'Inicio' */
-        .navbar-cinerostar .nav-link.active {
-            border-bottom: 3px solid #FFCC00; /* Línea amarilla brillante */
-        }
+.nav-link.active {
+    color: #FFCC00 !important;
+    border-bottom: 3px solid #FFCC00; /* Borde amarillo para el activo */
+}
 
-        /* Estilo del texto del logo para fines de ejemplo, ya que el logo es una imagen */
-        .logo-text {
-            color: white;
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin-left: -5px; /* Ajuste visual */
-        }
-        /* Para simular la estructura del logo, aunque lo ideal sería usar una imagen */
-        .logo-container {
-            display: flex;
-            align-items: center;
-        }
-        .logo-text-small {
-            font-size: 0.7rem;
-            font-weight: normal;
-            display: block;
-            margin-top: -8px;
-            letter-spacing: 2px;
-        }
-        /* Color del logo amarillo/dorado */
-        .yellow-logo {
-            color: #FFCC00;
-        }
+.top-header {
+    height: 40px;
+    background-color: #8D6E63; /* Marrón para la banda superior */
+}
 
+/* ======================== */
+/* ESTILOS DE CINES */
+/* ======================== */
 
-        
+.page-title {
+    color: #4CAF50; /* Verde para el título */
+    font-weight: 700;
+    margin-bottom: 30px;
+}
 
+.cinema-card {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    height: 100%; /* Asegura que todas las tarjetas tengan la misma altura */
+}
 
+.cinema-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
 
-        /* ESTILOS DE TEMA (Fondo claro como en la imagen) */
-        body {
-            background-color: #f8f8f8; /* Fondo blanco/gris muy claro */
-            font-family: Arial, sans-serif;
-        }
-        /* CABECERA ROJA (Simulando la barra superior de Cinestar) */
-        .top-header {
-            background-color: #a0201d; /* Rojo */
-            height: 50px;
-            margin-bottom: 20px;
-        }
-        /* Título Principal */
-        .page-title {
-            color: #212529; /* Texto oscuro */
-            font-weight: bold;
-            margin-bottom: 30px;
-        }
-        /* Tarjeta de Cine */
-        .cinema-card {
-            background-color: white;
-            border: 1px solid #e0e0e0;
-            border-radius: 4px;
-            overflow: hidden;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-        /* Imagen del logo de CineBlas en la tarjeta */
-        .cinema-image-container {
-            height: 150px; /* Altura fija para la imagen */
-            overflow: hidden;
-            background-color: #a0201d; /* Fondo rojo de la imagen */
-            position: relative;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .cinema-logo-placeholder {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background-image: url('URL_DE_IMAGEN_FONDO_ROJO_CINEBLAS.jpg'); /* Reemplazar */
-            background-size: cover;
-            background-position: center;
-        }
-        /* Contenido del texto de la tarjeta */
-        .cinema-info {
-            padding: 15px;
-        }
-        .cinema-name {
-            font-weight: bold;
-            color: #212529;
-            margin-bottom: 5px;
-        }
-        .cinema-address {
-            font-size: 0.9rem;
-            color: #555;
-            margin-bottom: 10px;
-        }
-        /* Formato 2D/3D */
-        .cinema-format-label {
-            display: inline-block;
-            background-color: #38761d; /* Verde oscuro (el color usado en otros filtros) */
-            color: white;
-            padding: 2px 8px;
-            border-radius: 3px;
-            font-size: 0.8rem;
-            margin-bottom: 15px;
-        }
-        /* Botón "Ver en mapa" */
-        .btn-mapa {
-            background-color: white;
-            color: #a0201d; /* Rojo */
-            border: 1px solid #a0201d;
-            border-radius: 4px;
-            padding: 8px 15px;
-            width: 100%;
-        }
-        .btn-mapa:hover {
-            background-color: #a0201d;
-            color: white;
->>>>>>> 9c05aef762bf957b0c616baf1317f69fb9d96608
-        }
+.cinema-image-container {
+    height: 150px;
+    background-color: #6D4C41; /* Marrón oscuro para el placeholder de imagen */
+}
+
+.cinema-logo-placeholder {
+    width: 100%;
+    height: 100%;
+}
+
+.cinema-info {
+    padding: 15px;
+    background-color: #f8f9fa; /* Fondo claro para la información */
+}
+
+.cinema-name {
+    font-weight: 700;
+    font-size: 1.3rem;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.cinema-address {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.cinema-format-label {
+    display: inline-block;
+    background-color: #4CAF50; /* Verde para el formato */
+    color: white;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    margin-bottom: 15px;
+}
+
+.btn-mapa {
+    display: block;
+    width: 100%;
+    background-color: #f8f9fa;
+    color: #CC0000; /* Borde y texto rojo */
+    border: 1px solid #CC0000; 
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.btn-mapa:hover {
+    background-color: #CC0000;
+    color: white;
+}
+
+/* ======================== */
+/* ESTILOS DEL MODAL DE MAPA (API) */
+/* ======================== */
+
+/* Estilo para los ítems de la lista en el modal */
+#branchesList .list-group-item {
+    cursor: pointer;
+    border-left: 3px solid transparent;
+    transition: all 0.2s;
+}
+
+#branchesList .list-group-item:hover {
+    background-color: #ffe0e0;
+}
+
+#branchesList .list-group-item.active {
+    background-color: #fcebeb !important;
+    border-color: #CC0000; /* Resalta el ítem activo con el color de la marca */
+    font-weight: 600;
+    color: #CC0000;
+}
+
+/* Estilo para InfoWindow personalizado (opcional) */
+.custom-infowindow {
+    padding: 8px 12px;
+    background-color: #FF0000; /* Rojo vibrante */
+    color: #000000 !important;
+    border-radius: 4px;
+    font-weight: bold;
+    font-family: Arial, sans-serif;
+    font-size: 1rem;
+    line-height: 1.3;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}

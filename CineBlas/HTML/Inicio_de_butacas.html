@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineStar - Frankie y los monstruos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/Inicio.css">
+    <link rel="icon" href="../imagenes/logo.png" type="image/png">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../JS/Inicio.js"></script>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-cinerostar py-0">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="../index.html">
+                <div class="logo-container">
+                    <img src="../imagenes/logo_cine.png" alt="CineBlast" class="site-logo img-fluid">
+                </div>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="../index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="Peliculas.html">Películas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Cines.html">Cines</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Chocolateria.html">Chocolatería</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Corporativos.html">Corporativo</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container py-4">
+
+        <div class="row movie-details mb-4">
+            <div class="col-md-3 mb-3 mb-md-0">
+                    <img id="movie-poster" src="../imagenes/placeholder.png" alt="Poster" class="img-fluid rounded shadow-sm">
+                </div>
+                <div class="col-md-9">
+                    <h1 class="movie-title" id="movie-title">Película</h1>
+                    <p class="movie-meta" id="movie-meta">Formato | Idiomas</p>
+                    <p class="text-secondary" id="movie-desc">
+                        Seleccione una función y presione "Comprar" para continuar con la selección de butacas.
+                    </p>
+                    <a href="#" class="cinestar-link d-block fw-bold mb-2" id="link-ver-mas">Ver más</a>
+                    <a href="#" class="cinestar-link d-flex align-items-center fw-bold" id="link-trailer">
+                        <span class="fs-5 me-1">▶</span> Ver trailer
+                    </a>
+            </div>
+        </div>
+
+        <hr>
+
+        <section class="date-selector d-flex flex-wrap gap-3 mb-4 ps-md-3" id="date-selector">
+            <div class="date-box active" data-date="2025-10-27">
+                <span class="day-label">Hoy</span>
+                <span class="day-number">27</span>
+                <span class="month">octubre</span>
+            </div>
+            <div class="date-box" data-date="2025-10-28">
+                <span class="day-label">Mañana</span>
+                <span class="day-number">28</span>
+                <span class="month">octubre</span>
+            </div>
+            <div class="date-box" data-date="2025-10-29">
+                <span class="day-label">miércoles</span>
+                <span class="day-number">29</span>
+                <span class="month">octubre</span>
+            </div>
+        </section>
+
+        <hr>
+
+        <section class="showtimes">
+            
+                    <div class="location-group mb-4">
+                <h2 class="location-name fs-6 fw-bold mb-2">COMAS</h2>
+                <div class="times-container d-flex flex-wrap gap-3">
+                    <button class="time-button" data-time="03:15 PM">
+                        03:15 PM
+                        		<a href="#" class="buy-link d-flex align-items-center mt-1">🛒 Comprar</a>
+                    </button>
+                </div>
+            </div>
+
+                    <div class="location-group mb-4">
+                <h2 class="location-name fs-6 fw-bold mb-2">UNI</h2>
+                <div class="times-container d-flex flex-wrap gap-3">
+                    <button class="time-button" data-time="03:15 PM">
+                        03:15 PM
+                        		<a href="#" class="buy-link d-flex align-items-center mt-1">🛒 Comprar</a>
+                    </button>
+                    <button class="time-button" data-time="05:00 PM">
+                        05:00 PM
+                        		<a href="#" class="buy-link d-flex align-items-center mt-1">🛒 Comprar</a>
+                    </button>
+                </div>
+            </div>
+
+        </section>
+        
+    </main>
+</body>
+</html>

@@ -1,0 +1,129 @@
+/* Colores y Tipografía Generales */
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    background-color: #f8f9fa; /* Color de fondo claro */
+}
+
+/* 1. Encabezado CineStar */
+.navbar-cinestar {
+    background-color: #c90000; /* Rojo principal de CineStar */
+}
+
+.navbar-cinestar .nav-item.active a {
+    /* Estilo de la pestaña activa (Películas) */
+    color: #ffcc00 !important;
+    border-bottom: 2px solid #ffcc00;
+}
+
+.logo small {
+    font-size: 0.6em;
+    font-weight: 400;
+    vertical-align: top;
+}
+
+/* 2. Enlaces/Título de Película */
+.movie-title, .cinestar-link, .buy-link {
+    color: #c90000; /* Rojo para links y título */
+}
+
+.movie-title {
+    font-size: 2.2em;
+    margin-top: 0;
+}
+
+.movie-meta {
+    font-size: 0.9em;
+    color: #6c757d;
+    margin-bottom: 15px;
+}
+
+/* 3. Selector de Fecha */
+.date-box {
+    background-color: #f8f9fa;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px 20px;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.2s;
+    min-width: 90px;
+    line-height: 1;
+}
+
+.date-box:hover {
+    border-color: #c90000;
+}
+
+.date-box.active {
+    /* Estilo del día seleccionado (fondo negro/gris oscuro) */
+    background-color: #333;
+    color: white;
+    border-color: #333;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.date-box .day-label {
+    font-size: 0.8em;
+    margin-bottom: 5px;
+}
+
+.date-box .day-number {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.date-box .month {
+    font-size: 0.7em;
+    margin-top: 5px;
+}
+
+/* 4. Botones de Horario */
+.time-button {
+    background-color: #f8f9fa;
+    border: 1px solid #c90000; /* Borde rojo */
+    border-radius: 5px;
+    padding: 8px 15px;
+    font-size: 1.1em;
+    font-weight: bold;
+    color: #333;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: background-color 0.2s;
+    width: 150px; /* Ancho fijo para alineación */
+}
+
+.time-button:hover {
+    background-color: #e9ecef;
+}
+
+.buy-link {
+    font-size: 0.8em;
+    text-decoration: none;
+    font-weight: normal;
+}
+.navbar-cinerostar {
+    background-color: #CC0000 !important;
+}
+
+.navbar-cinerostar .nav-link {
+    color: white !important;
+    font-weight: 500;
+    padding-bottom: 0.5rem;
+}
+
+.navbar-cinerostar .nav-link.active {
+    border-bottom: 3px solid #FFCC00;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.site-logo {
+    width: 400px;
+    height: 110px;
+    object-fit: contain;
+}
