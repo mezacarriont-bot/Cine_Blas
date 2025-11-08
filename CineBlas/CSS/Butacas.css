@@ -1,10 +1,73 @@
-/* Estilos generales */
+.steps-container {
+    padding: 2rem 1rem;
+}
+.steps-container {
+    padding: 2rem 1rem;
+}
+
+.step-number {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    border: 2px solid currentColor;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+#step-bar .btn {
+    transition: all 0.3s ease;
+    margin: 0 1rem;
+    min-width: 120px;
+}
+
+#step-bar .btn:hover {
+    transform: translateY(-2px);
+}
+
+#step-bar .btn-danger .step-number {
+    background-color: #dc3545;
+    color: #fff;
+    border-color: #dc3545;
+}
+
+#step-bar .btn-outline-secondary .step-number {
+    background-color: #fff;
+    color: #6c757d;
+    border-color: #6c757d;
+}
+
 body {
     background-color: #f8f9fa;
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Arial, sans-serif;
     margin: 0;
     padding: 0;
-    color: #000000;
+    color: #333;
+    font-size: 1.05rem;
+    font-weight: 500;
+    line-height: 1.45;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+body {
+    background-color: #f8f9fa;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+    font-size: 1.05rem;
+    font-weight: 500;
+    line-height: 1.45;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
 }
 
 /* Estilos de la barra de navegación */
@@ -31,6 +94,44 @@ body {
     width: 400px;
     height: 110px;
     object-fit: contain;
+}
+
+/* Mejoras visuales para el panel lateral de Butacas */
+.movie-cine {
+    font-size: 1.05em;
+    color: #c90000;
+    margin-top: 6px;
+    font-weight: 700;
+}
+
+#current-entry-date, #current-entry-time {
+    font-weight: 700;
+    color: #222;
+    margin: 6px 0;
+    font-size: 1.05em;
+}
+
+/* Hacer el póster y la info más compacto en móviles */
+@media (max-width: 768px) {
+    .col-md-4.col-lg-3.text-center.mb-4 img#movie-poster {
+        max-width: 160px;
+    }
+}
+
+/* Responsive typography and layout tweaks for Butacas */
+@media (max-width: 768px) {
+    body { font-size: 0.98rem; }
+    #current-entry-date, #current-entry-time { font-size: 1rem; }
+    .site-logo { width: 280px; height: auto; }
+    .seat { width: 22px; height: 22px; }
+}
+
+@media (max-width: 576px) {
+    body { font-size: 0.95rem; }
+    .movie-cine { font-size: 1rem; }
+    #current-entry-date, #current-entry-time { font-size: 0.98rem; }
+    .site-logo { width: 220px; }
+    .seat { width: 20px; height: 20px; }
 }
 
 /* Estilos de componentes comunes */

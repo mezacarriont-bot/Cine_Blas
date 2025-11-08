@@ -161,17 +161,25 @@ document.addEventListener('click', (e) => {
     const btn = e.target.closest && e.target.closest('.btn-mapa');
     if (!btn) return;
     e.preventDefault();
-    
+
     // Obtener datos del cine
     const address = btn.getAttribute('data-address') || btn.dataset.address || '';
     const cinemaName = btn.closest('.cinema-info') ? btn.closest('.cinema-info').querySelector('.cinema-name').textContent.trim() : '';
-    
+
     // Poblar la lista de sucursales en el modal
     populateBranchesList(address);
-    
-    // Pausa breve para que el modal de Bootstrap se abra completamente antes de dibujar el mapa.
-    // Esto asegura que el mapa se renderice correctamente en su contenedor visible.
+
+    // Actualizar el enlace de "Cómo llegar" en el modal
     setTimeout(() => {
         showCinemaOnMap(cinemaName, address);
+
+        // Actualizar el botón de "Cómo llegar" con el enlace de Google Maps
+        const directionsBtn = document.querySelector('.get-directions');
+        if (directionsBtn) {
+            // Codificar la dirección para URL
+            const gmapsUrl = `https://www.google.com/maps/dir/?api=1&destination=${encodeURIComponent(address)}`;
+            directionsBtn.href = gmapsUrl;
+            directionsBtn.setAttribute('aria-label', `Cómo llegar a ${cinemaName}`);
+        }
     }, 300); // 300ms es un buen margen para la animación del modal
 });

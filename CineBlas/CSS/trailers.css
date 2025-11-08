@@ -1,0 +1,76 @@
+/* Estilos para el modal del tráiler */
+.trailer-modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 1100;
+}
+
+.trailer-modal-content {
+    position: relative;
+    width: 90%;
+    max-width: 800px;
+    margin: 5% auto;
+    padding-bottom: 56.25%; /* Aspect ratio 16:9 */
+}
+
+.trailer-modal iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Botón del tráiler */
+.btn-trailer {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(204, 0, 0, 0.9);
+    color: white;
+    border: none;
+    border-radius: 20px;
+    padding: 8px 16px;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    opacity: 0;
+}
+
+.movie-card {
+    position: relative;
+    overflow: hidden;
+}
+
+.movie-card:hover .btn-trailer {
+    opacity: 1;
+}
+
+.btn-trailer:hover {
+    background-color: #aa0000;
+}
+
+.btn-trailer i {
+    margin-right: 5px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .trailer-modal-content {
+        width: 95%;
+        margin: 10% auto;
+    }
+    
+    .btn-trailer {
+        opacity: 1;
+        font-size: 0.8rem;
+        padding: 6px 12px;
+    }
+}

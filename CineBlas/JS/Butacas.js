@@ -9,12 +9,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     const SNACK_ITEMS = {
         popcorn: [
-            { id: 'PC_CHICO', name: 'POP CORN SALADO CHICO', price: 11.00, img: 'popcorn_chico.png' },
-            { id: 'PC_MEDIANO', name: 'POP CORN MEDIANO SALADO', price: 12.00, img: 'popcorn_mediano.png' }
+            { id: 'PC_CHICO', name: 'POP CORN SALADO CHICO', price: 11.00, img: 'canchita_mediana.png' },
+            { id: 'PC_MEDIANO', name: 'POP CORN MEDIANO SALADO', price: 12.00, img: 'canchita_mediana.png' }
         ],
         bebidas: [
-            { id: 'G_CHICO', name: 'GASEOSA VASO CHICO', price: 8.00, img: 'gaseosa_chico.png' },
-            { id: 'G_MEDIANO', name: 'GASEOSA VASO MEDIANO', price: 10.00, img: 'gaseosa_mediano.png' }
+            { id: 'G_CHICO', name: 'GASEOSA VASO CHICO', price: 8.00, img: 'coca_cola.jpg' },
+            { id: 'G_MEDIANO', name: 'GASEOSA VASO MEDIANO', price: 10.00, img: 'coca_cola.jpg' }
         ]
     };
 
@@ -164,13 +164,9 @@ document.addEventListener('DOMContentLoaded', () => {
         seat.className = 'seat';
         seat.setAttribute('data-seat-id', id);
         seat.addEventListener('click', toggleSeatSelection);
-        // No seleccionar automáticamente ninguna butaca al inicializar.
-        // El estado inicial debe empezar con 'selectedSeats' vacío.
-        if (selectedSeats.includes(id)) {
-            seat.classList.add('selected');
-        }
-        
-        return seat;
+            if (selectedSeats.includes(id)) {
+                seat.classList.add('selected');
+            }        return seat;
     }
 
     function toggleSeatSelection(event) {
@@ -294,6 +290,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     function generateSnackItems() {
+    // Determinar la ruta base para las imágenes de snacks:
+    // si la página actual está dentro de la carpeta /HTML/ (ej. HTML/Butacas.html),
+    // las imágenes están una carpeta arriba: ../imagenes/
+    const baseImgsPath = window.location.pathname.includes('/HTML/') ? '../imagenes/' : 'imagenes/';
+
         ['popcorn', 'bebidas'].forEach(category => {
             const container = document.getElementById(`${category}-items`);
             if (!container) return;
@@ -301,21 +302,26 @@ document.addEventListener('DOMContentLoaded', () => {
             SNACK_ITEMS[category].forEach(item => {
                 if (snackCounts[item.id] === undefined) { snackCounts[item.id] = 0; }
                 const count = snackCounts[item.id];
-                
-                const html = `
-                    <div class="col-md-4">
-                        <div class="snack-item shadow-sm">
-                            <img src="https://via.placeholder.com/100x100?text=${item.name.split(' ').slice(0, 2).join('+')}" alt="${item.name}" class="img-fluid mb-2">
-                            <p class="fw-bold mb-1">${item.name}</p>
-                            <p class="mb-2">S/${item.price.toFixed(2)}</p>
-                            <div class="quantity-control justify-content-center" data-id="${item.id}">
-                                <button class="btn btn-sm btn-light decrease-snack" data-id="${item.id}" ${count === 0 ? 'disabled' : ''}>-</button>
-                                <span class="quantity-display" data-id="${item.id}">${count}</span>
-                                <button class="btn btn-sm btn-light increase-snack" data-id="${item.id}">+</button>
+
+                // Usar la propiedad item.img (nombre de archivo) y construir la ruta completa
+                const imgPath = `${baseImgsPath}${item.img}`;
+
+                    const html = `
+                        <div class="col">
+                            <div class="product-card card h-100" data-price="${item.price.toFixed(2)}">
+                                <img src="${imgPath}" class="card-img-top" alt="${item.name}" loading="lazy" width="200" height="140" style="object-fit: cover;" onerror="this.onerror=null;this.src='https://via.placeholder.com/200x140?text=Sin+imagen'">
+                                <div class="card-body p-2">
+                                    <p class="card-text text-center fw-bold">${item.name}</p>
+                                    <div class="price text-center fw-bold">S/${item.price.toFixed(2)}</div>
+                                    <div class="quantity-control d-flex justify-content-center mt-2" data-id="${item.id}">
+                                        <button class="btn btn-sm btn-light decrease-snack" data-id="${item.id}" ${count === 0 ? 'disabled' : ''}>-</button>
+                                        <span class="quantity px-2 quantity-display" data-id="${item.id}">${count}</span>
+                                        <button class="btn btn-sm btn-light increase-snack" data-id="${item.id}">+</button>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                `;
+                    `;
                 container.insertAdjacentHTML('beforeend', html);
             });
         });
@@ -646,20 +652,83 @@ document.addEventListener('DOMContentLoaded', () => {
     timerInterval = setInterval(updateClock, 1000); 
 });
 (function(){
-            const params = new URLSearchParams(window.location.search);
-            ['title', 'image', 'time'].forEach(param => {
-                const value = params.get(param);
-                if (value) {
-                    const elem = param === 'image' ? 
-                        document.getElementById('movie-poster') : 
-                        document.getElementById(`movie-${param}`);
-                    if (elem) {
-                        param === 'image' ? 
-                            elem.setAttribute('src', decodeURIComponent(value)) : 
-                            elem.textContent = param === 'time' ? 
-                                `🕒 ${decodeURIComponent(value)}` : 
-                                decodeURIComponent(value);
-                    }
-                }
-            });
-        })();
+    const params = new URLSearchParams(window.location.search);
+    let title = params.get('title');
+    let image = params.get('image');
+    let time = params.get('time');
+    let date = params.get('date');
+    let location = params.get('location');
+
+    // If any important param is missing, try to read from localStorage:selectedShow
+    if ((!title || !time) && window.localStorage) {
+        try {
+            const raw = localStorage.getItem('selectedShow');
+            if (raw) {
+                const sel = JSON.parse(raw);
+                title = title || sel.title;
+                image = image || sel.image;
+                time = time || sel.time;
+                date = date || sel.date;
+                location = location || sel.location;
+            }
+        } catch (ex) {
+            console.warn('No se pudo leer selectedShow desde localStorage', ex);
+        }
+    }
+
+    if (title) {
+        const decodedTitle = decodeURIComponent(title);
+        const tEl = document.getElementById('movie-title');
+        if (tEl) tEl.textContent = decodedTitle;
+        
+        // Mostrar duración si está disponible
+        const durationEl = document.getElementById('movie-duration');
+        if (durationEl && window.MOVIE_DURATIONS && window.MOVIE_DURATIONS[decodedTitle]) {
+            const minutes = window.MOVIE_DURATIONS[decodedTitle];
+            const hours = Math.floor(minutes / 60);
+            const remainingMinutes = minutes % 60;
+            durationEl.textContent = `${hours}h ${remainingMinutes}min`;
+        }
+    }
+
+    if (image) {
+        const imgEl = document.getElementById('movie-poster');
+        if (imgEl) imgEl.setAttribute('src', decodeURIComponent(image));
+    }
+
+    if (time) {
+        const timeEl = document.getElementById('movie-time') || document.getElementById('movie-time-display');
+        if (timeEl) timeEl.textContent = `🕒 ${decodeURIComponent(time)}`;
+    }
+
+    if (date) {
+        // Formatear la fecha ISO a un formato legible y mostrar 'Hoy' cuando corresponda
+        try {
+            const dObj = new Date(date);
+            const fullDateStr = dObj.toLocaleDateString('es-PE', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' });
+            const todayIso = new Date().toISOString().split('T')[0];
+            const label = (date === todayIso) ? `Hoy — ${fullDateStr}` : `${fullDateStr.charAt(0).toUpperCase() + fullDateStr.slice(1)}`;
+            const dateEl = document.getElementById('movie-date') || document.getElementById('current-entry-date');
+            if (dateEl) {
+                // Mostrar la etiqueta 'Hoy — <fecha completa>' cuando corresponda, pero
+                // NO agregar atributo title para evitar que aparezca cuadro de texto al pasar el cursor.
+                dateEl.textContent = `📅 ${label}`;
+            }
+        } catch (ex) {
+            const dateEl = document.getElementById('movie-date') || document.getElementById('current-entry-date');
+            if (dateEl) dateEl.textContent = `📅 ${decodeURIComponent(date)}`;
+        }
+    }
+
+    if (location) {
+        // movie-cine exists in the template
+        const locEl = document.getElementById('movie-location') || document.getElementById('movie-cine');
+        if (locEl) locEl.textContent = decodeURIComponent(location);
+    }
+
+    // Also set entry time display if available
+    if (time) {
+        const entryTimeEl = document.getElementById('current-entry-time') || document.getElementById('movie-time') || document.getElementById('movie-time-display');
+        if (entryTimeEl) entryTimeEl.textContent = `🕒 ${decodeURIComponent(time)}`;
+    }
+})();

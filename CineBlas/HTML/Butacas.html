@@ -38,9 +38,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="Chocolateria.html">Chocolatería</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="Corporativos.html">Corporativo</a>
-                    </li>
+                    <!-- Corporativo removido según indicaciones -->
                 </ul>
             </div>
         </div>
@@ -57,24 +55,52 @@
 
     <div class="container-fluid py-4">
         <div class="row">
-                <div class="col-md-4 col-lg-3 text-center mb-4">
-                <img id="movie-poster" src="https://via.placeholder.com/200x300?text=Poster" alt="Poster de la película" class="img-fluid rounded shadow mb-3">
-                <div class="text-start ms-4">
-                    <h5 class="fw-bold" id="movie-title">Película</h5>
-                    <p class="mb-1" id="movie-duration">--</p>
-                    <h6 class="fw-bold text-uppercase mt-3" id="movie-cine">--</h6>
-                    <p class="mb-0" id="current-entry-date">📅 </p>
-                    <p class="mb-0" id="current-entry-time">🕒 </p>
-                    <p>🔲 SALA: 02</p>
+                <div class="col-md-4 col-lg-3 mb-4">
+                    <div class="movie-info-panel">
+                        <div class="text-center">
+                        </div>
+                        <div class="movie-details">
+                            <p class="mb-2 d-flex align-items-center">
+                            </p>
+                            <p class="mb-2 d-flex align-items-center">
+                                <span class="material-icons me-2"></span>
+                                <span id="current-entry-date"></span>
+                            </p>
+                            <p class="mb-2 d-flex align-items-center">
+                                <span class="material-icons me-2"></span>
+                                <span id="current-entry-time"></span>
+                            </p>
+                            <p class="mb-0 d-flex align-items-center">
+                                <span class="material-icons me-2"></span>
+                                <span>SALA: 02</span>
+                            </p>
+                        </div>
+                    </div>
                 </div>
-            </div>
 
             <div class="col-md-8 col-lg-9">
-                <div class="d-flex justify-content-start mb-4" id="step-bar">
-                    <button class="btn btn-primary me-2 p-3" data-step="1">💺 Butacas</button>
-                    <button class="btn btn-outline-secondary me-2 p-3" data-step="2">🎟️ Entradas</button>
-                    <button class="btn btn-outline-secondary me-2 p-3" data-step="3">🗑️ Snacks</button>
-                    <button class="btn btn-outline-secondary me-2 p-3" data-step="4">💲 Pago</button>
+                <div class="steps-container mb-4">
+                    <div class="progress progress-bar-thin">
+                        <div class="progress-bar bg-danger progress-width-25" role="progressbar" title="Progreso del proceso de compra" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    <div class="d-flex justify-content-between position-relative mt-3" id="step-bar">
+                        <button class="btn btn-danger position-relative px-4 py-3" data-step="1">
+                            <span class="step-number">1</span>
+                            <span class="d-block">💺 Butacas</span>
+                        </button>
+                        <button class="btn btn-outline-secondary position-relative px-4 py-3" data-step="2">
+                            <span class="step-number">2</span>
+                            <span class="d-block">🎟️ Entradas</span>
+                        </button>
+                        <button class="btn btn-outline-secondary position-relative px-4 py-3" data-step="3">
+                            <span class="step-number">3</span>
+                            <span class="d-block">🗑️ Snacks</span>
+                        </button>
+                        <button class="btn btn-outline-secondary position-relative px-4 py-3" data-step="4">
+                            <span class="step-number">4</span>
+                            <span class="d-block">💲 Pago</span>
+                        </button>
+                    </div>
                 </div>
 
                 <div class="step-content" data-step="1">
@@ -104,15 +130,116 @@
 
                 <div class="step-content d-none" data-step="3">
                     <h5 class="fw-bold">3. Elija sus Snacks (Opcional)</h5>
-                    <ul class="nav nav-tabs" id="snacksTab" role="tablist">
-                        <li class="nav-item" role="presentation"><button class="nav-link active" data-bs-toggle="tab" data-bs-target="#popcorn-tab" type="button" role="tab">POP CORN</button></li>
-                        <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#bebidas-tab" type="button" role="tab">BEBIDAS</button></li>
-                        <li class="nav-item" role="presentation"><button class="nav-link" data-bs-toggle="tab" data-bs-target="#combos-tab" type="button" role="tab">COMBOS</button></li>
+                    <ul class="nav nav-tabs custom-tabs" role="tablist">
+                        <li class="nav-item" role="presentation"><button class="nav-link active tab-button" data-bs-toggle="tab" data-bs-target="#popcorn-tab" type="button" role="tab" data-tab="popcorn">POP CORN</button></li>
+                        <li class="nav-item" role="presentation"><button class="nav-link tab-button" data-bs-toggle="tab" data-bs-target="#bebidas-tab" type="button" role="tab" data-tab="bebidas">BEBIDAS</button></li>
+                        <li class="nav-item" role="presentation"><button class="nav-link tab-button" data-bs-toggle="tab" data-bs-target="#combos-tab" type="button" role="tab" data-tab="combos">COMBOS</button></li>
                     </ul>
                     <div class="tab-content pt-3" id="snacksTabContent">
-                        <div class="tab-pane fade show active" id="popcorn-tab" role="tabpanel"><div class="row" id="popcorn-items"></div></div>
-                        <div class="tab-pane fade" id="bebidas-tab" role="tabpanel"><div class="row" id="bebidas-items"></div></div>
-                        <div class="tab-pane fade" id="combos-tab" role="tabpanel"><div class="row">Aún no hay combos.</div></div>
+                        <div class="tab-pane fade show active" id="popcorn-tab" role="tabpanel">
+                            <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4 products-grid" id="popcorn-items">
+                                <div class="col">
+                                    <div class="snack-item">
+                                        <img src="../imagenes/canchita_grande.jpg" alt="Pop Corn Grande" class="img-fluid mb-2" loading="lazy">
+                                        <h5>Pop Corn Grande</h5>
+                                        <p class="text-danger fw-bold">S/ 20.00</p>
+                                        <div class="quantity-control justify-content-center"></div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="snack-item">
+                                        <img src="../imagenes/canchita_mediana.png" alt="Pop Corn Mediano" class="img-fluid mb-2" loading="lazy">
+                                        <h5>Pop Corn Mediano</h5>
+                                        <p class="text-danger fw-bold">S/ 15.00</p>
+                                        <div class="quantity-control justify-content-center"></div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="snack-item">
+                                        <img src="../imagenes/canchita_pequeña.png" alt="Pop Corn Pequeño" class="img-fluid mb-2" loading="lazy">
+                                        <h5>Pop Corn Pequeño</h5>
+                                        <p class="text-danger fw-bold">S/ 12.00</p>
+                                        <div class="quantity-control justify-content-center"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="bebidas-tab" role="tabpanel">
+                            <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4 products-grid" id="bebidas-items">
+                                <div class="col">
+                                    <div class="snack-item">
+                                        <img src="../imagenes/coca_cola.jpg" alt="Coca Cola" class="img-fluid mb-2" loading="lazy">
+                                        <h5>Coca Cola</h5>
+                                        <p class="text-danger fw-bold">S/ 8.00</p>
+                                        <div class="quantity-control justify-content-center"></div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="snack-item">
+                                        <img src="../imagenes/inka_cola.webp" alt="Inca Kola" class="img-fluid mb-2" loading="lazy">
+                                        <h5>Inca Kola</h5>
+                                        <p class="text-danger fw-bold">S/ 8.00</p>
+                                        <div class="quantity-control justify-content-center"></div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="snack-item">
+                                        <img src="../imagenes/sporade.jpg" alt="Sporade" class="img-fluid mb-2" loading="lazy">
+                                        <h5>Sporade</h5>
+                                        <p class="text-danger fw-bold">S/ 7.00</p>
+                                        <div class="quantity-control justify-content-center"></div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="snack-item">
+                                        <img src="../imagenes/agua_san_mateo.jpg" alt="Agua San Mateo" class="img-fluid mb-2" loading="lazy">
+                                        <h5>Agua San Mateo</h5>
+                                        <p class="text-danger fw-bold">S/ 5.00</p>
+                                        <div class="quantity-control justify-content-center"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane fade" id="combos-tab" role="tabpanel">
+                            <div class="row row-cols-2 row-cols-md-3 row-cols-lg-4 g-4 products-grid" id="combos-items">
+                                <div class="col">
+                                    <div class="snack-item">
+                                        <img src="../imagenes/combo_1.webp" alt="Combo Familiar" class="img-fluid mb-2" loading="lazy">
+                                        <h5>Combo Familiar</h5>
+                                        <p>Pop Corn Grande + 4 Bebidas</p>
+                                        <p class="text-danger fw-bold">S/ 45.00</p>
+                                        <div class="quantity-control justify-content-center"></div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="snack-item">
+                                        <img src="../imagenes/combo_2.jpg" alt="Combo Parejas" class="img-fluid mb-2" loading="lazy">
+                                        <h5>Combo Parejas</h5>
+                                        <p>Pop Corn Mediano + 2 Bebidas</p>
+                                        <p class="text-danger fw-bold">S/ 28.00</p>
+                                        <div class="quantity-control justify-content-center"></div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="snack-item">
+                                        <img src="../imagenes/combo_3.jpg" alt="Combo Individual" class="img-fluid mb-2" loading="lazy">
+                                        <h5>Combo Individual</h5>
+                                        <p>Pop Corn Pequeño + 1 Bebida</p>
+                                        <p class="text-danger fw-bold">S/ 18.00</p>
+                                        <div class="quantity-control justify-content-center"></div>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="snack-item">
+                                        <img src="../imagenes/nachos_con_queso.jpg" alt="Combo Nachos" class="img-fluid mb-2" loading="lazy">
+                                        <h5>Combo Nachos</h5>
+                                        <p>Nachos con Queso + 2 Bebidas</p>
+                                        <p class="text-danger fw-bold">S/ 25.00</p>
+                                        <div class="quantity-control justify-content-center"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
                     <div class="d-flex justify-content-end align-items-center mt-5 me-5">
@@ -232,27 +359,24 @@
           </div>
         </div>
       </div>
+    <!-- Toasters moved inside body and deduplicated -->
+    <div class="position-fixed top-0 end-0 p-3 toast-container">
+        <div id="successToastButacas" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body">
+                    <div>Compra con éxito</div>
+                    <div class="mt-1">Pedido: <strong id="order-id-butacas"></strong></div>
+                </div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Cerrar"></button>
+            </div>
+        </div>
+        <div id="errorToastButacas" class="toast align-items-center text-bg-danger border-0 mt-2" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div id="errorToastBodyButacas" class="toast-body">Por favor complete los campos requeridos.</div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Cerrar"></button>
+            </div>
+        </div>
     </div>
-    
+
 </body>
 </html>
-<!-- Toasts: éxito y error para Butacas -->
-<div class="position-fixed top-0 end-0 p-3" style="z-index: 1080;">
-    <div id="successToastButacas" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
-        <div class="d-flex">
-            <div class="toast-body">
-                <div>Compra con éxito</div>
-                <div class="mt-1">Pedido: <strong id="order-id-butacas"></strong></div>
-            </div>
-            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Cerrar"></button>
-        </div>
-    </div>
-</div>
-<div class="position-fixed top-0 end-0 p-3" style="z-index: 1080;">
-    <div id="errorToastButacas" class="toast align-items-center text-bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true">
-        <div class="d-flex">
-            <div id="errorToastBodyButacas" class="toast-body">Por favor complete los campos requeridos.</div>
-            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Cerrar"></button>
-        </div>
-    </div>
-</div>

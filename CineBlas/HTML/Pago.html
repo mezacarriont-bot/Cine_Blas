@@ -9,6 +9,7 @@
     <script defer src="../JS/pago.js"></script>
         <link rel="stylesheet" href="../CSS/pago.css">
     <link rel="icon" href="../imagenes/logo.png" type="image/png">
+    <!-- Accessibility high-contrast mode (eliminado: modo oscuro) -->
 </head>
 <body>
     <nav class="navbar navbar-expand-lg navbar-cinerostar py-0">
@@ -35,21 +36,19 @@
                     <li class="nav-item">
                         <a class="nav-link" href="Chocolateria.html">Chocolatería</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="Corporativos.html">Corporativo</a>
-                    </li>
+                    <!-- Corporativo eliminado -->
                 </ul>
             </div>
         </div>
     </nav>
 
     <div class="container py-5">
-        <div class="payment-container mx-auto p-4 bg-white rounded shadow" style="max-width: 500px;">
+    <div class="payment-container mx-auto p-4 bg-white rounded shadow">
             <h3>Completa tus datos</h3>
 
             <div class="row g-2 mb-3">
                 <div class="col-4">
-                     <select id="doc-type" class="form-select">
+                    <select id="doc-type" class="form-select" aria-label="Tipo de documento">
                         <option>DNI</option>
                         <option>CE</option>
                     </select>
@@ -138,28 +137,20 @@
     </div>
 
      
+    <!-- Toasts moved inside body; rely on .toast-container styles -->
+    <div class="position-fixed top-0 end-0 p-3 toast-container">
+        <div id="successToast" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div class="toast-body">Compra con éxito<div class="mt-1">Pedido: <strong id="order-id"></strong></div></div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Cerrar"></button>
+            </div>
+        </div>
+        <div id="errorToast" class="toast align-items-center text-bg-danger border-0 mt-2" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="d-flex">
+                <div id="errorToastBody" class="toast-body">Por favor complete los campos requeridos.</div>
+                <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Cerrar"></button>
+            </div>
+        </div>
+    </div>
 </body>
-        <!-- Toast de éxito -->
-        <div class="position-fixed top-0 end-0 p-3" style="z-index: 1080;">
-            <div id="successToast" class="toast align-items-center text-bg-success border-0" role="alert" aria-live="assertive" aria-atomic="true">
-                <div class="d-flex">
-                    <div class="toast-body">
-                        <div></div>Compra con éxito</div>
-                        <div class="mt-1">Pedido: <strong id="order-id"></strong></div>
-                    </div>
-                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Cerrar"></button>
-                </div>
-            </div>
-        </div>
-        <!-- Toast de error -->
-        <div class="position-fixed top-0 end-0 p-3" style="z-index: 1080;">
-            <div id="errorToast" class="toast align-items-center text-bg-danger border-0" role="alert" aria-live="assertive" aria-atomic="true">
-                <div class="d-flex">
-                    <div id="errorToastBody" class="toast-body">
-                        Por favor complete los campos requeridos.
-                    </div>
-                    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Cerrar"></button>
-                </div>
-            </div>
-        </div>
 </html>

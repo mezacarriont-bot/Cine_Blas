@@ -7,6 +7,25 @@ body {
     padding: 0;
 }
 
+/* Legibilidad base para la página de pago */
+body {
+    font-size: 1.05rem;
+    font-weight: 600;
+    line-height: 1.45;
+}
+
+/* Responsive tweaks for Pago page */
+@media (max-width: 768px) {
+    body { font-size: 0.98rem; }
+    .site-logo { width: 280px; }
+    .payment-container { margin: 0 12px; }
+}
+@media (max-width: 576px) {
+    body { font-size: 0.95rem; }
+    .site-logo { width: 220px; }
+    .custom-btn-pagar { min-width: 100px; }
+}
+
 /* Navbar styles */
 .navbar-cinerostar {
     background-color: #CC0000 !important;

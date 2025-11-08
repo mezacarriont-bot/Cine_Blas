@@ -1,11 +1,64 @@
-/* ======================== */
-/* ESTILOS DE NAVEGACIÓN (CINEBLAST) */
-/* ======================== */
+/* ==========================================================================
+   Variables CSS
+   ========================================================================== */
+:root {
+    /* Colores principales */
+    --color-primary: #CC0000;
+    --color-accent: #FFCC00;
+    --color-success: #4CAF50;
+    --color-background: #f8f9fa;
+    --color-text: #333333;
+    --color-text-light: #666666;
+    
+    /* Sombras */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
+    --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.2);
+    
+    /* Transiciones */
+    --transition-fast: 0.2s ease;
+    --transition-base: 0.3s ease;
+    
+    /* Espaciado */
+    --spacing-xs: 0.5rem;
+    --spacing-sm: 1rem;
+    --spacing-md: 1.5rem;
+    --spacing-lg: 2rem;
+}
 
+/* ==========================================================================
+   Estilos Base
+   ========================================================================== */
+body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 1.05rem;
+    font-weight: 500;
+    line-height: 1.45;
+    color: var(--color-text);
+    background-color: var(--color-background);
+}
+
+/* ==========================================================================
+   Navegación
+   ========================================================================== */
 .navbar-cinerostar {
-    background-color: #CC0000 !important; /* Rojo oscuro principal */
+    background-color: var(--color-primary) !important;
     min-height: 60px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: var(--shadow-sm);
+    position: relative;
+    z-index: 1000;
+}
+
+/* Responsive tweaks for Cines page */
+@media (max-width: 768px) {
+    body { font-size: 0.98rem; }
+    .site-logo { width: 280px; }
+    .cinema-name { font-size: 1.1rem; }
+}
+@media (max-width: 576px) {
+    body { font-size: 0.95rem; }
+    .site-logo { width: 220px; }
+    .cinema-name { font-size: 1rem; }
 }
 
 .logo-container {
@@ -41,113 +94,345 @@
     background-color: #8D6E63; /* Marrón para la banda superior */
 }
 
-/* ======================== */
-/* ESTILOS DE CINES */
-/* ======================== */
-
+/* ==========================================================================
+   Encabezado y Títulos
+   ========================================================================== */
 .page-title {
-    color: #4CAF50; /* Verde para el título */
+    color: var(--color-success);
+    font-size: 2.5rem;
     font-weight: 700;
-    margin-bottom: 30px;
+    margin-bottom: var(--spacing-lg);
+    position: relative;
+    padding-bottom: var(--spacing-sm);
 }
 
+.page-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background-color: var(--color-success);
+    border-radius: 2px;
+}
+
+/* ==========================================================================
+   Tarjetas de Cines
+   ========================================================================== */
 .cinema-card {
-    border: 1px solid #ccc;
-    border-radius: 8px;
+    border: 1px solid #e0e0e6;
+    border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
-    height: 100%; /* Asegura que todas las tarjetas tengan la misma altura */
+    background-color: white;
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-base);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .cinema-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    box-shadow: var(--shadow-lg);
 }
 
 .cinema-image-container {
-    height: 150px;
-    background-color: #6D4C41; /* Marrón oscuro para el placeholder de imagen */
+    height: 180px;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(135deg, #6D4C41 0%, #8D6E63 100%);
+}
+
+.cinema-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-base);
+}
+
+.cinema-card:hover .cinema-image {
+    transform: scale(1.05);
+}
+
+.cinema-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.1) 0%,
+        rgba(0, 0, 0, 0.6) 100%
+    );
+    opacity: 0;
+    transition: opacity var(--transition-base);
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-end;
+    padding: var(--spacing-sm);
+}
+
+.cinema-card:hover .cinema-overlay {
+    opacity: 1;
+}
+
+.cinema-status {
+    background-color: var(--color-success);
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.cinema-status::before {
+    content: '•';
+    color: white;
+    font-size: 1.2em;
 }
 
 .cinema-logo-placeholder {
     width: 100%;
     height: 100%;
+    background-image: url('../imagenes/logo_cine.png');
+    background-size: 60%;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.7;
+    transition: opacity var(--transition-base);
+}
+
+.cinema-card:hover .cinema-logo-placeholder {
+    opacity: 1;
 }
 
 .cinema-info {
-    padding: 15px;
-    background-color: #f8f9fa; /* Fondo claro para la información */
+    padding: var(--spacing-md);
+    background-color: white;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .cinema-name {
     font-weight: 700;
     font-size: 1.3rem;
-    color: #333;
-    margin-bottom: 5px;
+    color: var(--color-text);
+    margin-bottom: var(--spacing-xs);
+    position: relative;
+    padding-bottom: var(--spacing-xs);
+}
+
+.cinema-name::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background-color: var(--color-primary);
+    border-radius: 1px;
 }
 
 .cinema-address {
-    font-size: 0.9rem;
-    color: #666;
-    margin-bottom: 10px;
+    font-size: 0.95rem;
+    color: var(--color-text-light);
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.4;
+    flex-grow: 1;
+}
+
+.cinema-features {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-sm);
 }
 
 .cinema-format-label {
-    display: inline-block;
-    background-color: #4CAF50; /* Verde para el formato */
+    display: inline-flex;
+    align-items: center;
+    background-color: var(--color-success);
     color: white;
-    padding: 2px 8px;
-    border-radius: 4px;
-    font-size: 0.8rem;
-    margin-bottom: 15px;
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
 }
 
+.cinema-format-label::before {
+    content: '🎬';
+    margin-right: 0.5rem;
+}
+
+.cinema-accessibility {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    background-color: #f0f0f0;
+    border-radius: 50%;
+    color: var(--color-text-light);
+    transition: all var(--transition-base);
+}
+
+.cinema-accessibility:hover {
+    background-color: var(--color-success);
+    color: white;
+}
+
+/* ==========================================================================
+   Botón del Mapa
+   ========================================================================== */
 .btn-mapa {
-    display: block;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     width: 100%;
-    background-color: #f8f9fa;
-    color: #CC0000; /* Borde y texto rojo */
-    border: 1px solid #CC0000; 
-    transition: background-color 0.3s, color 0.3s;
+    background-color: white;
+    color: var(--color-primary);
+    border: 2px solid var(--color-primary);
+    border-radius: 8px;
+    padding: 0.75rem;
+    font-weight: 600;
+    transition: all var(--transition-base);
+    text-decoration: none;
+    gap: 0.5rem;
+}
+
+.btn-mapa::before {
+    content: '📍';
+    font-size: 1.1em;
 }
 
 .btn-mapa:hover {
-    background-color: #CC0000;
+    background-color: var(--color-primary);
     color: white;
+    transform: translateY(-2px);
 }
 
-/* ======================== */
-/* ESTILOS DEL MODAL DE MAPA (API) */
-/* ======================== */
+/* ==========================================================================
+   Modal del Mapa
+   ========================================================================== */
 
-/* Estilo para los ítems de la lista en el modal */
+.map-container {
+    position: relative;
+    width: 100%;
+    background: #f8f9fa;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+}
+
+.map-view {
+    height: 400px;
+    width: 100%;
+    border-radius: 8px;
+    background-color: #e9ecef;
+}
+
+/* Contenedor del mapa modal */
+.modal-xl .map-container {
+    min-height: 400px;
+}
+
+/* Lista de sucursales en el modal */
+.cinema-list {
+    max-height: calc(400px - 40px); /* Ajuste para el encabezado */
+    overflow-y: auto;
+    border-radius: 8px;
+    border: 1px solid rgba(0,0,0,0.1);
+    background-color: white;
+    margin-top: 10px;
+}
+
 #branchesList .list-group-item {
     cursor: pointer;
     border-left: 3px solid transparent;
-    transition: all 0.2s;
+    padding: var(--spacing-sm);
+    transition: all var(--transition-fast);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+#branchesList .list-group-item::before {
+    content: '🎬';
+    font-size: 1.2em;
 }
 
 #branchesList .list-group-item:hover {
-    background-color: #ffe0e0;
+    background-color: rgba(204, 0, 0, 0.1);
 }
 
 #branchesList .list-group-item.active {
-    background-color: #fcebeb !important;
-    border-color: #CC0000; /* Resalta el ítem activo con el color de la marca */
+    background-color: rgba(204, 0, 0, 0.15) !important;
+    border-left-color: var(--color-primary);
+    color: var(--color-primary);
     font-weight: 600;
-    color: #CC0000;
 }
 
-/* Estilo para InfoWindow personalizado (opcional) */
+/* Información de la ventana del mapa */
 .custom-infowindow {
-    padding: 8px 12px;
-    background-color: #FF0000; /* Rojo vibrante */
-    color: #000000 !important;
-    border-radius: 4px;
-    font-weight: bold;
-    font-family: Arial, sans-serif;
+    padding: var(--spacing-sm) var(--spacing-md);
+    background-color: white;
+    color: var(--color-text) !important;
+    border-radius: 8px;
+    border-left: 4px solid var(--color-primary);
+    font-weight: 500;
+    font-family: 'Segoe UI', Arial, sans-serif;
     font-size: 1rem;
-    line-height: 1.3;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    line-height: 1.4;
+    box-shadow: var(--shadow-md);
+}
+
+/* Contenedor del mapa */
+#apiMapContainer {
+    border-radius: 8px;
+    overflow: hidden;
+    border: none;
+    box-shadow: var(--shadow-sm);
+}
+
+/* Información de la dirección */
+#mapInfo {
+    background-color: rgba(204, 0, 0, 0.05);
+    border-radius: 8px;
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    border: 1px solid rgba(204, 0, 0, 0.1);
+}
+
+#mapInfo h5 {
+    color: var(--color-text);
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-sm);
+}
+
+#mapInfo .fas {
+    margin-right: var(--spacing-xs);
+}
+
+#mapAddressText {
+    color: var(--color-text);
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.4;
+    margin-bottom: var(--spacing-sm);
+}
+
+.get-directions {
+    margin-top: var(--spacing-sm);
+    padding: var(--spacing-xs) var(--spacing-md);
+    font-weight: 500;
+}
+
+.get-directions .fas {
+    margin-right: var(--spacing-xs);
 }

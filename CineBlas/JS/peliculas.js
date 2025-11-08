@@ -43,16 +43,86 @@ document.querySelector('#offcanvasIdiomas .btn-aplicar').addEventListener('click
 
 // Lista de películas disponibles
 const peliculas = [
-    { titulo: 'Wonka', formato: '2D', idiomas: ['Doblada', 'Subtitulada'], imagen: '../imagenes/peli1.jpg', estreno: true },
-    { titulo: 'Five Nights at Freddy\'s', formato: '3D', idiomas: ['Doblada'], imagen: '../imagenes/peli2.jpg', estreno: false },
-    { titulo: 'Taylor Swift: The Eras Tour', formato: '2D', idiomas: ['ESPAÑOL', 'Subtitulada'], imagen: '../imagenes/peli3.jpg', estreno: true },
-    { titulo: 'Trolls 3', formato: '3D', idiomas: ['Doblada', 'ESPAÑOL'], imagen: '../imagenes/peli4.jpg', estreno: false },
-    { titulo: 'Migration', formato: '2D', idiomas: ['Doblada'], imagen: '../imagenes/peli5.jpg', estreno: true },
-    { titulo: 'Los Juegos del Hambre', formato: '3D', idiomas: ['Subtitulada'], imagen: '../imagenes/peli6.jpg', estreno: false },
-    { titulo: 'Wish', formato: '2D', idiomas: ['Doblada', 'ESPAÑOL'], imagen: '../imagenes/peli7.jpg', estreno: true },
-    { titulo: 'Napoleon', formato: '3D', idiomas: ['Subtitulada'], imagen: '../imagenes/peli8.jpg', estreno: false },
-    { titulo: 'Aquaman 2', formato: '2D', idiomas: ['Doblada', 'Subtitulada'], imagen: '../imagenes/peli9.jpg', estreno: true },
-    { titulo: 'Kung Fu Panda 4', formato: '3D', idiomas: ['Doblada', 'ESPAÑOL'], imagen: '../imagenes/peli10.jpg', estreno: false }
+    { 
+        titulo: 'Wonka',
+        formato: '2D',
+        idiomas: ['Doblada', 'Subtitulada'],
+        imagen: '../imagenes/15.avif',
+        estreno: true,
+        trailer: 'https://www.youtube.com/watch?v=B1Z0BjA4TSc'
+    },
+    { 
+        titulo: 'Five Nights at Freddy\'s',
+        formato: '3D',
+        idiomas: ['Doblada'],
+        imagen: '../imagenes/19.jpg',
+        estreno: false,
+        trailer: 'https://www.youtube.com/watch?v=sld2-fE_Wng'
+    },
+    { 
+        titulo: 'Taylor Swift: The Eras Tour',
+        formato: '2D',
+        idiomas: ['ESPAÑOL', 'Subtitulada'],
+        imagen: '../imagenes/17.webp',
+        estreno: true,
+        trailer: 'https://www.youtube.com/watch?v=TB72bNlQmSc'
+    },
+    { 
+        titulo: 'Trolls 3',
+        formato: '3D',
+        idiomas: ['Doblada', 'ESPAÑOL'],
+        imagen: '../imagenes/21.webp',
+        estreno: false,
+        trailer: 'https://www.youtube.com/watch?v=gMVsBMq_b_M'
+    },
+    { 
+        titulo: 'Migration',
+        formato: '2D',
+        idiomas: ['Doblada'],
+        imagen: '../imagenes/22.jpg',
+        estreno: true,
+        trailer: 'https://www.youtube.com/watch?v=AXbE-_VcMBc'
+    },
+    { 
+        titulo: 'Los Juegos del Hambre',
+        formato: '3D',
+        idiomas: ['Subtitulada'],
+        imagen: '../imagenes/18.png',
+        estreno: false,
+        trailer: 'https://www.youtube.com/watch?v=eO0T9A3kdqc'
+    },
+    { 
+        titulo: '300: Rise of an Empire',
+        formato: '2D',
+        idiomas: ['Doblada', 'ESPAÑOL'],
+        imagen: '../imagenes/7.jpg',
+        estreno: true,
+        trailer: 'https://www.youtube.com/watch?v=bsoJaQ2gZh4'
+    },
+    { 
+        titulo: 'Project Power',
+        formato: '3D',
+        idiomas: ['Subtitulada'],
+        imagen: '../imagenes/8.jpg',
+        estreno: false,
+        trailer: 'https://www.youtube.com/watch?v=xw1vQgVaYNQ'
+    },
+    { 
+        titulo: 'Venom: Let There Be Carnage',
+        formato: '2D',
+        idiomas: ['Doblada', 'Subtitulada'],
+        imagen: '../imagenes/9.jpg',
+        estreno: true,
+        trailer: 'https://www.youtube.com/watch?v=hbfadtw-fjs'
+    },
+    { 
+        titulo: 'Kung Fu Panda 4',
+        formato: '3D',
+        idiomas: ['Doblada', 'ESPAÑOL'],
+        imagen: '../imagenes/14.jpg',
+        estreno: false,
+        trailer: 'https://www.youtube.com/watch?v=_inKs4eeHiI'
+    }
 ];
 
 // Búsqueda en tiempo real
@@ -116,8 +186,8 @@ function generarPeliculasParaDia(contenedor) {
 
             html += `
                 <div class="col">
-                    <a class="movie-link" href="${href}">
-                        <div class="movie-card">
+                    <div class="movie-card">
+                        <a class="movie-link" href="${href}">
                             <img src="${pelicula.imagen}" alt="${pelicula.titulo}" class="card-img-top">
                             <div class="movie-info">
                                 <p class="mb-1 text-center text-truncate">${displayTitle}</p>
@@ -125,8 +195,11 @@ function generarPeliculasParaDia(contenedor) {
                                 <p class="movie-language text-center">${pelicula.idiomas.join(' / ')}</p>
                                 ${pelicula.estreno ? '<p class="movie-label text-center">Estreno</p>' : ''}
                             </div>
-                        </div>
-                    </a>
+                        </a>
+                        <button class="btn btn-trailer" onclick="showTrailer('${pelicula.imagen}')">
+                            <i class="fas fa-play"></i> Ver Tráiler
+                        </button>
+                    </div>
                 </div>
             `;
         });

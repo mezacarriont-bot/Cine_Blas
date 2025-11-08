@@ -1,13 +1,33 @@
-/* Estilo personalizado para el color rojo de fondo */
-        .navbar-cinerostar {
-            background-color: #CC0000; /* Un rojo intenso similar al de la imagen */
-        }
+/* ==========================================================================
+   Variables CSS
+   ========================================================================== */
+:root {
+    --primary-color: #CC0000;
+    --accent-color: #FFCC00;
+    --text-color: #333333;
+    --background-color: #ffffff;
+    --border-color: #e0e0e6;
+    --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+    --shadow-md: 0 4px 6px rgba(0,0,0,0.1);
+    --transition-base: all 0.3s ease;
+}
 
-        /* Establecer fondo blanco para toda la página y sus elementos */
-        body {
-            background-color: #ffffff;
-            color: #000000;
-        }
+/* ==========================================================================
+   Estilos Base
+   ========================================================================== */
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 1.05rem;
+    font-weight: 500;
+    line-height: 1.45;
+    background-image: linear-gradient(rgba(255,255,255,0.95), rgba(255,255,255,0.95)), 
+                      url('../imagenes/inicio_2.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
 
         /* Contenedores y secciones */
         .app-section, 
@@ -105,6 +125,9 @@
         body {
             background-color: #ffffff;
             color: #000000;
+            font-size: 1.05rem;
+            font-weight: 600;
+            line-height: 1.45;
         }
 .navbar-cinerostar {
     background-color: #CC0000 !important;
@@ -129,4 +152,61 @@
     width: 400px;
     height: 110px;
     object-fit: contain;
+}
+
+/* Responsive layout and components */
+.product-card .card-img-top {
+    width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    transition: transform 0.2s ease;
+}
+
+.product-card:hover .card-img-top {
+    transform: scale(1.05);
+}
+
+.product-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    transition: box-shadow 0.2s ease;
+}
+
+.product-card:hover {
+    box-shadow: var(--shadow-md);
+}
+
+.product-card .card-body {
+    padding: 1rem;
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.products-grid .card {
+    margin-bottom: 1.5rem;
+}
+
+/* Responsive typography and spacing */
+@media (max-width: 768px) {
+    body { 
+        font-size: 0.98rem;
+        line-height: 1.4;
+    }
+    .site-logo { width: 280px; }
+    .product-card .card-body { padding: 0.75rem; }
+    .product-card .card-title { font-size: 1.1rem; }
+}
+
+@media (max-width: 576px) {
+    body { 
+        font-size: 0.95rem;
+        line-height: 1.35;
+    }
+    .site-logo { width: 220px; }
+    .product-card .card-body { padding: 0.5rem; }
+    .product-card .card-title { font-size: 1rem; }
+    .products-grid .card { margin-bottom: 1rem; }
 }

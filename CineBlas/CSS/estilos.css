@@ -1,9 +1,12 @@
 body {
-    background-color: #87CEEB; /* Mismo celeste que .btn-enviar */
-    color: #f9f8f8; /* Texto negro para buena legibilidad sobre celeste */
+    background-color: #87CEEB;
+    color: #f9f8f8;
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
+    font-size: 1.05rem;
+    font-weight: 600;
+    line-height: 1.45;
 }
 
 .movie-grid-container {
@@ -102,10 +105,15 @@ body {
 }
 
 .btn-enviar {
-    background-color: #ffffff; /* Celeste (mismo que body) */
+    background-color: #CC0000;
     color: #ffffff;
     padding: 10px 30px;
     border-radius: 4px;
+    transition: background-color 0.2s ease;
+}
+
+.btn-enviar:hover {
+    background-color: #aa0000;
 }
 
 .main-footer {
@@ -119,22 +127,11 @@ body {
 .main-footer a {
     color: #ccc;
     text-decoration: none;
+    transition: color 0.2s ease;
 }
 
 .main-footer a:hover {
     color: #fff;
-}
-
-@media (max-width: 1200px) {
-    #carouselExampleIndicators .carousel-item { max-height: 420px; }
-}
-
-@media (max-width: 768px) {
-    #carouselExampleIndicators .carousel-item { max-height: 300px; }
-}
-
-@media (max-width: 480px) {
-    #carouselExampleIndicators .carousel-item { max-height: 200px; }
 }
 .navbar-cinerostar {
     background-color: #CC0000 !important;
@@ -156,7 +153,46 @@ body {
 }
 
 .site-logo {
-    width: 400px;
-    height: 110px;
+    width: 320px;
+    height: auto;
     object-fit: contain;
+    max-height: 110px;
+}
+
+.selected-cine-banner {
+    background-color: #CC0000;
+    padding: 10px;
+    border-radius: 5px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.125rem;
+    color: #ffffff;
+}
+
+.payment-container {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1200px) {
+    #carouselExampleIndicators .carousel-item { max-height: 420px; }
+}
+
+@media (max-width: 768px) {
+    body { font-size: 0.98rem; }
+    .site-logo { width: 260px; }
+    .movie-card img { height: auto; }
+    #carouselExampleIndicators .carousel-item { max-height: 300px; }
+    .movie-grid-container { padding: 0 15px; }
+    .section-header { flex-direction: column; gap: 15px; }
+    .nav-pills { width: 100%; justify-content: center; }
+}
+
+@media (max-width: 576px) {
+    body { font-size: 0.95rem; }
+    .site-logo { width: 220px; }
+    .nav-pills .nav-link { padding: 6px 10px; font-size: 0.85rem; }
+    #carouselExampleIndicators .carousel-item { max-height: 200px; }
+    .movie-grid-container { padding: 0 10px; }
 }

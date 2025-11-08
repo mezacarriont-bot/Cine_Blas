@@ -45,7 +45,11 @@
             background-color: #163625; /* Fondo oscuro (Verde oscuro Cinemark/CineBlas) */
             color: #d4d4d4; /* Texto claro */
             font-family: Arial, sans-serif;
-            padding-bottom: 50px; 
+            padding-bottom: 50px;
+            /* Legibilidad base */
+            font-size: 1.05rem;
+            font-weight: 600;
+            line-height: 1.45;
         }
         .top-header {
             background-color: #a0201d; /* Rojo */
@@ -194,4 +198,53 @@
     width: 400px;
     height: 110px;
     object-fit: contain;
+}
+        
+        /* Responsive adjustments for Peliculas page */
+        @media (max-width: 768px) {
+            body { font-size: 0.98rem; }
+            .site-logo { width: 280px; }
+            .date-selector .btn { min-width: 68px; padding: 6px 10px; }
+        }
+        @media (max-width: 576px) {
+            body { font-size: 0.95rem; }
+            .site-logo { width: 220px; }
+            .date-selector .btn { font-size: 0.78rem; padding: 6px 8px; }
+        }
+
+/* Ajustes específicos para las tarjetas de películas: tamaño de imagen y visibilidad de texto */
+.movie-card img.card-img-top {
+    width: 100%;
+    /* Altura mayor para que la imagen no comprima el área de texto */
+    height: 260px;
+    object-fit: cover; /* Mantener recorte centrado y proporcional */
+    display: block;
+}
+
+.movie-info p {
+    margin: 0;
+    padding: 2px 0;
+    font-size: 0.92rem;
+    line-height: 1.15;
+}
+
+/* Anular la utilidad text-truncate para permitir que el título haga wrap y se muestre completo */
+.movie-info .text-truncate {
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
+}
+
+/* Etiquetas (formato / idioma / estreno) más compactas y centradas */
+.movie-format, .movie-language, .movie-label {
+    font-size: 0.82rem;
+}
+
+@media (max-width: 768px) {
+    .movie-card img.card-img-top { height: 220px; }
+}
+
+@media (max-width: 576px) {
+    .movie-card img.card-img-top { height: 180px; }
+    .movie-info p { font-size: 0.88rem; }
 }
