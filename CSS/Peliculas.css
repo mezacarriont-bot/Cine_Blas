@@ -1,0 +1,250 @@
+/* Estilo personalizado para el color rojo de fondo */
+        .navbar-cinerostar {
+            background-color: #CC0000; /* Un rojo intenso similar al de la imagen */
+        }
+        /* Estilo para los enlaces de la barra de navegación */
+        .navbar-cinerostar .nav-link {
+            color: white !important; /* Texto blanco para los enlaces */
+            font-weight: 500; /* Un peso de fuente ligeramente más grueso */
+            padding-bottom: 0.5rem; /* Espacio inferior para la línea amarilla */
+            transition: border-bottom 0.2s ease-in-out;
+        }
+        /* Estilo para simular la línea amarilla activa en 'Inicio' */
+        .navbar-cinerostar .nav-link.active {
+            border-bottom: 3px solid #FFCC00; /* Línea amarilla brillante */
+        }
+
+        /* Estilo del texto del logo para fines de ejemplo, ya que el logo es una imagen */
+        .logo-text {
+            color: white;
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-left: -5px; /* Ajuste visual */
+        }
+        /* Para simular la estructura del logo, aunque lo ideal sería usar una imagen */
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        .logo-text-small {
+            font-size: 0.7rem;
+            font-weight: normal;
+            display: block;
+            margin-top: -8px;
+            letter-spacing: 2px;
+        }
+        /* Color del logo amarillo/dorado */
+        .yellow-logo {
+            color: #FFCC00;
+        }
+
+
+
+        /* ESTILOS DE TEMA OSCURO */
+        body {
+            background-color: #163625; /* Fondo oscuro (Verde oscuro Cinemark/CineBlas) */
+            color: #d4d4d4; /* Texto claro */
+            font-family: Arial, sans-serif;
+            padding-bottom: 50px;
+            /* Legibilidad base */
+            font-size: 1.05rem;
+            font-weight: 600;
+            line-height: 1.45;
+        }
+        .top-header {
+            background-color: #a0201d; /* Rojo */
+            height: 40px;
+        }
+        /* BARRA DE BÚSQUEDA Y TÍTULO */
+        .search-bar {
+            background-color: #163625;
+            padding: 10px 0;
+            border-bottom: 1px solid #2e4d3d;
+        }
+        .search-bar .form-control {
+            background-color: #2e4d3d;
+            border: none;
+            color: white;
+            border-radius: 4px;
+        }
+        .search-bar .btn {
+            background-color: transparent;
+            border: none;
+            color: #ccc;
+        }
+        /* SELECTOR DE DÍAS (14 DÍAS) */
+        .filter-header {
+            background-color: #163625;
+            padding: 20px 0;
+        }
+        .date-selector-wrapper {
+            overflow-x: auto; 
+            white-space: nowrap; 
+            padding: 5px 0;
+            margin: 0 auto;
+            max-width: 100%;
+        }
+        .date-selector .btn {
+            background-color: #2e4d3d;
+            color: #ccc;
+            border: none;
+            margin-right: 5px;
+            padding: 8px 15px;
+            border-radius: 4px;
+            min-width: 80px;
+            display: inline-block;
+            font-size: 0.8rem;
+        }
+        .date-selector .btn.active {
+            background-color: #38761d; /* Verde para el día activo */
+            color: white;
+            font-weight: bold;
+        }
+        /* GRUPO DE FILTROS INFERIORES */
+        .dropdown-toggle {
+            background-color: transparent !important;
+            color: #ccc !important;
+            border: 1px solid #444 !important;
+            margin-right: 10px;
+        }
+        /* CUADRÍCULA DE PELÍCULAS */
+        .movie-card {
+            background-color: #000000; 
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 20px;
+            border: 1px solid #333;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .movie-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+        }
+        .movie-info {
+            padding: 10px;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+        .movie-format {
+            font-size: 0.8rem;
+            color: #ffffff;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+        }
+        .movie-label {
+            background-color: #CC0000; 
+            color: white;
+            font-size: 0.7rem;
+            padding: 2px 5px;
+            border-radius: 3px;
+            display: inline-block;
+            margin-top: 5px;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+        }
+        .movie-language {
+            color: #ffffff;
+            font-size: 0.8rem;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+        }
+        /* OFFCANVAS (Menús laterales de filtro) */
+        .offcanvas {
+            background-color: #163625; 
+            color: #d4d4d4;
+        }
+        .offcanvas-header {
+            border-bottom: 1px solid #2e4d3d;
+        }
+        .offcanvas-body .list-group-item {
+            background-color: transparent;
+            color: #d4d4d4;
+            border: none;
+            border-bottom: 1px solid #2e4d3d;
+        }
+        .offcanvas-footer {
+            background-color: #2e4d3d;
+            padding: 10px 15px;
+            position: sticky;
+            bottom: 0;
+        }
+        .btn-aplicar {
+            background-color: #38761d;
+            color: white;
+            width: 100%;
+            font-weight: bold;
+        }
+        /* Estilo para los inputs de radio/checkbox en Offcanvas */
+        .form-check-input:checked {
+            background-color: #38761d;
+            border-color: #38761d;
+        }
+        .navbar-cinerostar {
+    background-color: #CC0000 !important;
+}
+
+.navbar-cinerostar .nav-link {
+    color: white !important;
+    font-weight: 500;
+    padding-bottom: 0.5rem;
+}
+
+.navbar-cinerostar .nav-link.active {
+    border-bottom: 3px solid #FFCC00;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.site-logo {
+    width: 400px;
+    height: 110px;
+    object-fit: contain;
+}
+        
+        /* Responsive adjustments for Peliculas page */
+        @media (max-width: 768px) {
+            body { font-size: 0.98rem; }
+            .site-logo { width: 280px; }
+            .date-selector .btn { min-width: 68px; padding: 6px 10px; }
+        }
+        @media (max-width: 576px) {
+            body { font-size: 0.95rem; }
+            .site-logo { width: 220px; }
+            .date-selector .btn { font-size: 0.78rem; padding: 6px 8px; }
+        }
+
+/* Ajustes específicos para las tarjetas de películas: tamaño de imagen y visibilidad de texto */
+.movie-card img.card-img-top {
+    width: 100%;
+    /* Altura mayor para que la imagen no comprima el área de texto */
+    height: 260px;
+    object-fit: cover; /* Mantener recorte centrado y proporcional */
+    display: block;
+}
+
+.movie-info p {
+    margin: 0;
+    padding: 2px 0;
+    font-size: 0.92rem;
+    line-height: 1.15;
+}
+
+/* Anular la utilidad text-truncate para permitir que el título haga wrap y se muestre completo */
+.movie-info .text-truncate {
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
+}
+
+/* Etiquetas (formato / idioma / estreno) más compactas y centradas */
+.movie-format, .movie-language, .movie-label {
+    font-size: 0.82rem;
+}
+
+@media (max-width: 768px) {
+    .movie-card img.card-img-top { height: 220px; }
+}
+
+@media (max-width: 576px) {
+    .movie-card img.card-img-top { height: 180px; }
+    .movie-info p { font-size: 0.88rem; }
+}

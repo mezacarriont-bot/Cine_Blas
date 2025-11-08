@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cines | CineBlast</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="icon" href="../imagenes/logo.png" type="image/png">
+    <link rel="stylesheet" href="../CSS/Cines.css">
+    <script defer src="../JS/script.js"></script>
+        <!-- Accessibility high-contrast mode -->
+        <link rel="stylesheet" href="../CSS/theme.css">
+    <script defer src="../JS/accessibility.js"></script>
+    <script defer type="module" src="https://ajax.googleapis.com/ajax/libs/@googlemaps/extended-component-library/0.6.11/index.min.js"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-cinerostar py-0">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="../index.html">
+                <div class="logo-container">
+                    <img src="../imagenes/logo_cine.png" alt="CineBlast" class="site-logo img-fluid">
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Peliculas.html">Películas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="Cines.html">Cines</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Chocolateria.html">Chocolatería</a>
+                    </li>
+                    <!-- Corporativo eliminado -->
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header class="page-header">
+        <div class="top-header"></div>
+        <div class="container py-5">
+            <h1 class="page-title">Descubre Nuestros Cines</h1>
+            <p class="lead text-muted">Encuentra el cine más cercano y disfruta de la mejor experiencia cinematográfica</p>
+        </div>
+    </header>
+
+    <main class="container py-4">
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+            
+            <div class="col">
+                <article class="cinema-card">
+                    <div class="cinema-image-container">
+                        <img src="../imagenes/logo_de_cine.jpg" 
+                             alt="CineBlast Arenales" 
+                             class="cinema-image"
+                             loading="lazy">
+                        <div class="cinema-overlay">
+                            <span class="cinema-status">Abierto</span>
+                        </div>
+                    </div>
+                    <div class="cinema-info">
+                        <h2 class="cinema-name h5">ARENALES</h2>
+                        <address class="cinema-address">
+                            Arenales 1736 - Centro comercial Arenales - 5to piso
+                        </address>
+                        <div class="cinema-features">
+                            <span class="cinema-format-label">2D</span>
+                            <span class="cinema-accessibility" title="Accesible para sillas de ruedas">
+                                <i class="fas fa-wheelchair" aria-hidden="true"></i>
+                            </span>
+                        </div>
+                        <a href="#" 
+                           class="btn btn-mapa" 
+                           data-bs-toggle="modal" 
+                           data-bs-target="#mapaModal" 
+                           data-address="CineBlast Arenales, Arenales 1736, Lince, Perú">
+                            <i class="fas fa-map-marker-alt"></i> Ver en mapa
+                        </a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="col">
+                <article class="cinema-card">
+                    <div class="cinema-image-container">
+                        <img src="../imagenes/logo_de_cine.jpg" 
+                             alt="CineBlast Sur" 
+                             class="cinema-image"
+                             loading="lazy">
+                        <div class="cinema-overlay">
+                            <span class="cinema-status">Abierto</span>
+                        </div>
+                    </div>
+                    <div class="cinema-info">
+                        <h2 class="cinema-name h5">SUR</h2>
+                        <address class="cinema-address">
+                            Av. los Héroes 240, San Juan de Miraflores 15801
+                        </address>
+                        <div class="cinema-features">
+                            <span class="cinema-format-label">2D</span>
+                            <span class="cinema-accessibility" title="Accesible para sillas de ruedas">
+                                <i class="fas fa-wheelchair" aria-hidden="true"></i>
+                            </span>
+                        </div>
+                        <a href="#" 
+                           class="btn btn-mapa" 
+                           data-bs-toggle="modal" 
+                           data-bs-target="#mapaModal" 
+                           data-address="CineBlast Sur, Av. los Héroes 240, San Juan de Miraflores 15801">
+                            <i class="fas fa-map-marker-alt"></i> Ver en mapa
+                        </a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="col">
+                <article class="cinema-card">
+                    <div class="cinema-image-container">
+                        <img src="../imagenes/logo_de_cine.jpg" 
+                             alt="CineBlast Chosica" 
+                             class="cinema-image"
+                             loading="lazy">
+                        <div class="cinema-overlay">
+                            <span class="cinema-status">Abierto</span>
+                        </div>
+                    </div>
+                    <div class="cinema-info">
+                        <h2 class="cinema-name h5">CHOSICA</h2>
+                        <address class="cinema-address">
+                            Ca. Argentina, Sub. Lote 02, parte del Potrero Sauce Grande, Lurigancho
+                        </address>
+                        <div class="cinema-features">
+                            <span class="cinema-format-label">2D</span>
+                            <span class="cinema-accessibility" title="Accesible para sillas de ruedas">
+                                <i class="fas fa-wheelchair" aria-hidden="true"></i>
+                            </span>
+                        </div>
+                        <a href="#" 
+                           class="btn btn-mapa" 
+                           data-bs-toggle="modal" 
+                           data-bs-target="#mapaModal" 
+                           data-address="CineBlast Chosica, Jiron Argentina, Lurigancho, Perú">
+                            <i class="fas fa-map-marker-alt"></i> Ver en mapa
+                        </a>
+                    </div>
+                </article>
+            </div>
+            
+            <div class="col">
+                <article class="cinema-card">
+                    <div class="cinema-image-container">
+                        <img src="../imagenes/logo_de_cine.jpg" 
+                             alt="CineBlast Tingo María" 
+                             class="cinema-image"
+                             loading="lazy">
+                        <div class="cinema-overlay">
+                            <span class="cinema-status">Abierto</span>
+                        </div>
+                    </div>
+                    <div class="cinema-info">
+                        <h2 class="cinema-name h5">TINGO MARÍA</h2>
+                        <address class="cinema-address">
+                            Cajamarca 901, Tingo María 10131
+                        </address>
+                        <div class="cinema-features">
+                            <span class="cinema-format-label">2D</span>
+                            <span class="cinema-accessibility" title="Accesible para sillas de ruedas">
+                                <i class="fas fa-wheelchair" aria-hidden="true"></i>
+                            </span>
+                        </div>
+                        <a href="#" 
+                           class="btn btn-mapa" 
+                           data-bs-toggle="modal" 
+                           data-bs-target="#mapaModal" 
+                           data-address="CineBlast Tingo María, Cajamarca 901, Tingo María, Perú">
+                            <i class="fas fa-map-marker-alt"></i> Ver en mapa
+                        </a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="col">
+                <article class="cinema-card">
+                    <div class="cinema-image-container">
+                        <img src="../imagenes/logo_de_cine.jpg"
+                             alt="CineBlast Tarapoto" 
+                             class="cinema-image"
+                             loading="lazy">
+                        <div class="cinema-overlay">
+                            <span class="cinema-status">Abierto</span>
+                        </div>
+                    </div>
+                    <div class="cinema-info">
+                        <h2 class="cinema-name h5">TARAPOTO</h2>
+                        <address class="cinema-address">
+                            Av. Perú 594, Tarapoto 22201
+                        </address>
+                        <div class="cinema-features">
+                            <span class="cinema-format-label">2D</span>
+                            <span class="cinema-accessibility" title="Accesible para sillas de ruedas">
+                                <i class="fas fa-wheelchair" aria-hidden="true"></i>
+                            </span>
+                        </div>
+                        <a href="#" 
+                           class="btn btn-mapa" 
+                           data-bs-toggle="modal" 
+                           data-bs-target="#mapaModal" 
+                           data-address="CineBlast Tarapoto, Av. Perú 594, Tarapoto, Perú">
+                            <i class="fas fa-map-marker-alt"></i> Ver en mapa
+                        </a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="col">
+                <article class="cinema-card">
+                    <div class="cinema-image-container">
+                        <img src="../imagenes/logo_de_cine.jpg"
+                             alt="CineBlast Sullana" 
+                             class="cinema-image"
+                             loading="lazy">
+                        <div class="cinema-overlay">
+                            <span class="cinema-status">Abierto</span>
+                        </div>
+                    </div>
+                    <div class="cinema-info">
+                        <h2 class="cinema-name h5">SULLANA</h2>
+                        <address class="cinema-address">
+                            Marcolino Champarinad 1112, Sullana 20100
+                        </address>
+                        <div class="cinema-features">
+                            <span class="cinema-format-label">2D</span>
+                            <span class="cinema-accessibility" title="Accesible para sillas de ruedas">
+                                <i class="fas fa-wheelchair" aria-hidden="true"></i>
+                            </span>
+                        </div>
+                        <a href="#" 
+                           class="btn btn-mapa" 
+                           data-bs-toggle="modal" 
+                           data-bs-target="#mapaModal" 
+                           data-address="CineBlast Sullana, Marcolino Champarinad 1112, Sullana, Perú">
+                            <i class="fas fa-map-marker-alt"></i> Ver en mapa
+                        </a>
+                    </div>
+                </article>
+            </div>
+            
+            <div class="col">
+                <article class="cinema-card">
+                    <div class="cinema-image-container">
+                        <img src="../imagenes/logo_de_cine.jpg"
+                             alt="CineBlast Comas" 
+                             class="cinema-image"
+                             loading="lazy">
+                        <div class="cinema-overlay">
+                            <span class="cinema-status">Abierto</span>
+                        </div>
+                    </div>
+                    <div class="cinema-info">
+                        <h2 class="cinema-name h5">COMAS</h2>
+                        <address class="cinema-address">
+                            Av. Tupac Amaru Cuadra 39 S/N - La Pascana
+                        </address>
+                        <div class="cinema-features">
+                            <span class="cinema-format-label">2D</span>
+                            <span class="cinema-accessibility" title="Accesible para sillas de ruedas">
+                                <i class="fas fa-wheelchair" aria-hidden="true"></i>
+                            </span>
+                        </div>
+                        <a href="#" 
+                           class="btn btn-mapa" 
+                           data-bs-toggle="modal" 
+                           data-bs-target="#mapaModal" 
+                           data-address="CineBlast Comas, Av. Tupac Amaru Cuadra 39 S/N, Comas, Perú">
+                            <i class="fas fa-map-marker-alt"></i> Ver en mapa
+                        </a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="col">
+                <article class="cinema-card">
+                    <div class="cinema-image-container">
+                        <img src="../imagenes/logo_de_cine.jpg" 
+                             alt="CineBlast San Juan de Lurigancho" 
+                             class="cinema-image"
+                             loading="lazy">
+                        <div class="cinema-overlay">
+                            <span class="cinema-status">Abierto</span>
+                        </div>
+                    </div>
+                    <div class="cinema-info">
+                        <h2 class="cinema-name h5">SJL</h2>
+                        <address class="cinema-address">
+                            Av. Los Próceres de la Independencia 1632 - San Juan de Lurigancho
+                        </address>
+                        <div class="cinema-features">
+                            <span class="cinema-format-label">2D</span>
+                            <span class="cinema-accessibility" title="Accesible para sillas de ruedas">
+                                <i class="fas fa-wheelchair" aria-hidden="true"></i>
+                            </span>
+                        </div>
+                        <a href="#" 
+                           class="btn btn-mapa" 
+                           data-bs-toggle="modal" 
+                           data-bs-target="#mapaModal" 
+                           data-address="CineBlast SJL, Av. Los Próceres de la Independencia 1632, San Juan de Lurigancho, Perú">
+                            <i class="fas fa-map-marker-alt"></i> Ver en mapa
+                        </a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="col">
+                <article class="cinema-card">
+                    <div class="cinema-image-container">
+                        <img src="../imagenes/logo_de_cine.jpg"
+                             alt="CineBlast Breña" 
+                             class="cinema-image"
+                             loading="lazy">
+                        <div class="cinema-overlay">
+                            <span class="cinema-status">Abierto</span>
+                        </div>
+                    </div>
+                    <div class="cinema-info">
+                        <h2 class="cinema-name h5">BREÑA</h2>
+                        <address class="cinema-address">
+                            Jr. Iquique N° 515 - Breña Av. Alfonso Ugarte y Venezuela
+                        </address>
+                        <div class="cinema-features">
+                            <span class="cinema-format-label">2D</span>
+                            <span class="cinema-accessibility" title="Accesible para sillas de ruedas">
+                                <i class="fas fa-wheelchair" aria-hidden="true"></i>
+                            </span>
+                        </div>
+                        <a href="#" 
+                           class="btn btn-mapa" 
+                           data-bs-toggle="modal" 
+                           data-bs-target="#mapaModal" 
+                           data-address="CineBlast Breña, Jr. Iquique N° 515, Breña, Perú">
+                            <i class="fas fa-map-marker-alt"></i> Ver en mapa
+                        </a>
+                    </div>
+                </article>
+            </div>
+            
+        </div>
+    </div>
+
+    <!-- Modal del Mapa -->
+    <div class="modal fade" id="mapaModal" tabindex="-1" aria-labelledby="mapaModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-xl">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="mapaModalLabel">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span id="selectedCinemaName">Ubicación del Cine</span>
+                    </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+                        <span class="visually-hidden">Cerrar mapa</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div id="mapInfo" class="map-info mb-3">
+                        <p id="mapAddressText" class="address-text small text-muted mb-1">Cargando ubicación...</p>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="cinema-selector">
+                                <h6 class="text-primary mb-2">
+                                    <i class="fas fa-film"></i> 
+                                    Selecciona un Cine
+                                </h6>
+                                <div id="branchesList" class="cinema-list list-group" role="list">
+                                    <!-- La lista de cines se llenará dinámicamente -->
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-md-8">
+                            <div class="map-container">
+                                <gmpx-api-loader key="AIzaSyB2Ju4ijJjuqWQeviiyVpiyZAs5nQlmorM" 
+                                               solution-channel="GMP_GE_mapsandplacesautocomplete_v2">
+                                </gmpx-api-loader>
+                                <div id="apiMapContainer" class="map-view" 
+                                     aria-label="Mapa interactivo mostrando la ubicación del cine">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="#" class="btn btn-primary get-directions" target="_blank" rel="noopener">
+                        <i class="fas fa-directions"></i> Cómo llegar
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</body>
+</html>

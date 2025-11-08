@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineStar - Frankie y los monstruos</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="../CSS/Inicio.css">
+    <link rel="stylesheet" href="../CSS/trailers.css">
+    <link rel="icon" href="../imagenes/logo.png" type="image/png">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../JS/movie-summaries.js"></script>
+    <script src="../JS/movie-durations.js"></script>
+    <script src="../JS/showtimes-data.js"></script>
+    <script src="../JS/showtimes-by-date.js"></script>
+    <script src="../JS/trailers.js"></script>
+    <script src="../JS/Inicio.js"></script>
+</head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-cinerostar py-0">
+        <div class="container-fluid">
+            <a class="navbar-brand d-flex align-items-center" href="../index.html">
+                <div class="logo-container">
+                    <img src="../imagenes/logo_cine.png" alt="CineBlast" class="site-logo img-fluid">
+                </div>
+            </a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="#navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Controles de tema eliminados (modo fijo: claro) -->
+
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="../index.html">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="Peliculas.html">Películas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Cines.html">Cines</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="Chocolateria.html">Chocolatería</a>
+                    </li>
+                    <li class="nav-item">
+                        <!-- Corporativo eliminado -->
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container py-4">
+
+        <div class="row movie-details mb-4">
+            <div class="col-md-3 mb-3 mb-md-0">
+                    <img id="movie-poster" src="../imagenes/placeholder.png" alt="Poster" class="img-fluid rounded shadow-sm">
+                </div>
+                <div class="col-md-9">
+                    <h1 class="movie-title" id="movie-title">Película</h1>
+                    <p class="movie-meta" id="movie-meta">Formato | Idiomas</p>
+                    <p class="text-secondary" id="movie-desc">
+                        Seleccione una función y presione "Comprar" para continuar con la selección de butacas.
+                    </p>
+                    <a href="#" class="cinestar-link d-block fw-bold mb-2" id="link-ver-mas">Ver más</a>
+                    <a href="#" class="cinestar-link d-flex align-items-center fw-bold" id="link-trailer">
+                        <span class="fs-5 me-1">▶</span> Ver trailer
+                    </a>
+            </div>
+        </div>
+
+        <hr>
+
+        <section class="date-selector d-flex flex-wrap gap-3 mb-4 ps-md-3" id="date-selector">
+            <!-- Las cajas de fecha se generan dinámicamente en JS (8 días: Hoy + 7). -->
+        </section>
+
+        <hr>
+
+        <section class="showtimes">
+
+            <div class="location-group mb-4">
+                <h2 class="location-name fs-6 fw-bold mb-2">COMAS</h2>
+                <div class="times-container d-flex flex-wrap gap-3">
+                    <div class="time-slot">
+                        <button class="time-button" data-time="03:15 PM" aria-label="Función a las 03:15 PM">03:15 PM</button>
+                        <a href="Butacas.html" class="buy-link d-flex align-items-center mt-1" role="button">🛒 Comprar</a>
+                    </div>
+                    <div class="time-slot">
+                        <button class="time-button" data-time="06:30 PM" aria-label="Función a las 06:30 PM">06:30 PM</button>
+                        <a href="Butacas.html" class="buy-link d-flex align-items-center mt-1" role="button">🛒 Comprar</a>
+                    </div>
+                    <div class="time-slot">
+                        <button class="time-button" data-time="09:00 PM" aria-label="Función a las 09:00 PM">09:00 PM</button>
+                        <a href="Butacas.html" class="buy-link d-flex align-items-center mt-1" role="button">🛒 Comprar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="location-group mb-4">
+                <h2 class="location-name fs-6 fw-bold mb-2">UNI</h2>
+                <div class="times-container d-flex flex-wrap gap-3">
+                    <div class="time-slot">
+                        <button class="time-button" data-time="03:15 PM" aria-label="Función a las 03:15 PM">03:15 PM</button>
+                        <a href="Butacas.html" class="buy-link d-flex align-items-center mt-1" role="button">🛒 Comprar</a>
+                    </div>
+                    <div class="time-slot">
+                        <button class="time-button" data-time="05:00 PM" aria-label="Función a las 05:00 PM">05:00 PM</button>
+                        <a href="Butacas.html" class="buy-link d-flex align-items-center mt-1" role="button">🛒 Comprar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="location-group mb-4">
+                <h2 class="location-name fs-6 fw-bold mb-2">MIRAFLORES</h2>
+                <div class="times-container d-flex flex-wrap gap-3">
+                    <div class="time-slot">
+                        <button class="time-button" data-time="01:00 PM" aria-label="Función a las 01:00 PM">01:00 PM</button>
+                        <a href="Butacas.html" class="buy-link d-flex align-items-center mt-1" role="button">🛒 Comprar</a>
+                    </div>
+                    <div class="time-slot">
+                        <button class="time-button" data-time="04:45 PM" aria-label="Función a las 04:45 PM">04:45 PM</button>
+                        <a href="Butacas.html" class="buy-link d-flex align-items-center mt-1" role="button">🛒 Comprar</a>
+                    </div>
+                    <div class="time-slot">
+                        <button class="time-button" data-time="08:10 PM" aria-label="Función a las 08:10 PM">08:10 PM</button>
+                        <a href="Butacas.html" class="buy-link d-flex align-items-center mt-1" role="button">🛒 Comprar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="location-group mb-4">
+                <h2 class="location-name fs-6 fw-bold mb-2">SAN ISIDRO</h2>
+                <div class="times-container d-flex flex-wrap gap-3">
+                    <div class="time-slot">
+                        <button class="time-button" data-time="02:30 PM" aria-label="Función a las 02:30 PM">02:30 PM</button>
+                        <a href="Butacas.html" class="buy-link d-flex align-items-center mt-1" role="button">🛒 Comprar</a>
+                    </div>
+                    <div class="time-slot">
+                        <button class="time-button" data-time="07:00 PM" aria-label="Función a las 07:00 PM">07:00 PM</button>
+                        <a href="Butacas.html" class="buy-link d-flex align-items-center mt-1" role="button">🛒 Comprar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="location-group mb-4">
+                <h2 class="location-name fs-6 fw-bold mb-2">SURCO</h2>
+                <div class="times-container d-flex flex-wrap gap-3">
+                    <div class="time-slot">
+                        <button class="time-button" data-time="12:00 PM" aria-label="Función a las 12:00 PM">12:00 PM</button>
+                        <a href="Butacas.html" class="buy-link d-flex align-items-center mt-1" role="button">🛒 Comprar</a>
+                    </div>
+                    <div class="time-slot">
+                        <button class="time-button" data-time="03:30 PM" aria-label="Función a las 03:30 PM">03:30 PM</button>
+                        <a href="Butacas.html" class="buy-link d-flex align-items-center mt-1" role="button">🛒 Comprar</a>
+                    </div>
+                    <div class="time-slot">
+                        <button class="time-button" data-time="06:15 PM" aria-label="Función a las 06:15 PM">06:15 PM</button>
+                        <a href="Butacas.html" class="buy-link d-flex align-items-center mt-1" role="button">🛒 Comprar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="location-group mb-4">
+                <h2 class="location-name fs-6 fw-bold mb-2">ATE</h2>
+                <div class="times-container d-flex flex-wrap gap-3">
+                    <div class="time-slot">
+                        <button class="time-button" data-time="11:00 AM" aria-label="Función a las 11:00 AM">11:00 AM</button>
+                        <a href="Butacas.html" class="buy-link d-flex align-items-center mt-1" role="button">🛒 Comprar</a>
+                    </div>
+                    <div class="time-slot">
+                        <button class="time-button" data-time="02:00 PM" aria-label="Función a las 02:00 PM">02:00 PM</button>
+                        <a href="Butacas.html" class="buy-link d-flex align-items-center mt-1" role="button">🛒 Comprar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="location-group mb-4">
+                <h2 class="location-name fs-6 fw-bold mb-2">LIMA CENTRO</h2>
+                <div class="times-container d-flex flex-wrap gap-3">
+                    <div class="time-slot">
+                        <button class="time-button" data-time="01:45 PM" aria-label="Función a las 01:45 PM">01:45 PM</button>
+                        <a href="Butacas.html" class="buy-link d-flex align-items-center mt-1" role="button">🛒 Comprar</a>
+                    </div>
+                    <div class="time-slot">
+                        <button class="time-button" data-time="05:45 PM" aria-label="Función a las 05:45 PM">05:45 PM</button>
+                        <a href="Butacas.html" class="buy-link d-flex align-items-center mt-1" role="button">🛒 Comprar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="location-group mb-4">
+                <h2 class="location-name fs-6 fw-bold mb-2">CHORRILLOS</h2>
+                <div class="times-container d-flex flex-wrap gap-3">
+                    <div class="time-slot">
+                        <button class="time-button" data-time="04:00 PM" aria-label="Función a las 04:00 PM">04:00 PM</button>
+                        <a href="Butacas.html" class="buy-link d-flex align-items-center mt-1" role="button">🛒 Comprar</a>
+                    </div>
+                    <div class="time-slot">
+                        <button class="time-button" data-time="07:30 PM" aria-label="Función a las 07:30 PM">07:30 PM</button>
+                        <a href="Butacas.html" class="buy-link d-flex align-items-center mt-1" role="button">🛒 Comprar</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="location-group mb-4">
+                <h2 class="location-name fs-6 fw-bold mb-2">SAN MIGUEL</h2>
+                <div class="times-container d-flex flex-wrap gap-3">
+                    <div class="time-slot">
+                        <button class="time-button" data-time="12:30 PM" aria-label="Función a las 12:30 PM">12:30 PM</button>
+                        <a href="Butacas.html" class="buy-link d-flex align-items-center mt-1" role="button">🛒 Comprar</a>
+                    </div>
+                    <div class="time-slot">
+                        <button class="time-button" data-time="03:00 PM" aria-label="Función a las 03:00 PM">03:00 PM</button>
+                        <a href="Butacas.html" class="buy-link d-flex align-items-center mt-1" role="button">🛒 Comprar</a>
+                    </div>
+                    <div class="time-slot">
+                        <button class="time-button" data-time="09:45 PM" aria-label="Función a las 09:45 PM">09:45 PM</button>
+                        <a href="Butacas.html" class="buy-link d-flex align-items-center mt-1" role="button">🛒 Comprar</a>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+        
+    </main>
+
+    <!-- Modal para tráilers -->
+    <div id="trailerModal" class="trailer-modal">
+        <div class="trailer-modal-content">
+            <iframe id="trailerIframe" title="Tráiler de película" frameborder="0" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <style>
+        #link-trailer {
+            color: #CC0000;
+            text-decoration: none;
+            transition: color 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        #link-trailer:hover {
+            color: #aa0000;
+        }
+
+        #link-trailer span {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            background-color: currentColor;
+            border-radius: 50%;
+            color: white;
+            font-size: 12px;
+        }
+
+        .time-slot {
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.2s;
+        }
+        
+        .time-button {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            padding: 0.75rem 1.5rem;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: 500;
+            width: 100%;
+        }
+        
+        .time-button:hover {
+            background-color: #f8f9fa;
+        }
+        
+        .time-button.selected {
+            background-color: #0d6efd;
+            color: white;
+            border-color: #0d6efd;
+        }
+        
+        .buy-link {
+            display: none;
+            text-decoration: none;
+            color: #fff;
+            background-color: #198754;
+            padding: 0.5rem;
+            border-radius: 6px;
+            margin: 0.5rem;
+            text-align: center;
+            transition: all 0.2s;
+        }
+        
+        .buy-link:hover {
+            background-color: #157347;
+            color: #fff;
+        }
+        
+        .time-slot.active .buy-link {
+            display: flex;
+            justify-content: center;
+        }
+    </style>
+
+    <script>
+    // Rellenar título, imagen y resumen si vienen en la query string
+    (function(){
+        try {
+            const params = new URLSearchParams(window.location.search);
+            const title = params.get('title');
+            const image = params.get('image');
+            
+            if (title) {
+                const decodedTitle = decodeURIComponent(title);
+                const tEl = document.getElementById('movie-title');
+                if (tEl) tEl.textContent = decodedTitle;
+                const metaEl = document.getElementById('movie-meta');
+                if (metaEl) {
+                    // Agregar duración si existe
+                    let metaText = '';
+                    if (window.MOVIE_DURATIONS && window.MOVIE_DURATIONS[decodedTitle]) {
+                        metaText += `Duración: ${window.MOVIE_DURATIONS[decodedTitle]} minutos`;
+                    }
+                    metaEl.textContent = metaText;
+                }
+                
+                // Actualizar resumen si existe
+                const descEl = document.getElementById('movie-desc');
+                if (descEl && window.MOVIE_SUMMARIES && window.MOVIE_SUMMARIES[decodedTitle]) {
+                    const movieInfo = window.MOVIE_SUMMARIES[decodedTitle];
+                    descEl.textContent = movieInfo.preview;
+                    
+                    // Configurar "Ver más" para alternar entre vista previa y resumen completo
+                    const verMasLink = document.getElementById('link-ver-mas');
+                    if (verMasLink) {
+                        verMasLink.style.display = 'block';
+                        let expanded = false;
+                        verMasLink.addEventListener('click', function(e) {
+                            e.preventDefault();
+                            if (!expanded) {
+                                descEl.textContent = movieInfo.full;
+                                this.textContent = 'Ver menos';
+                            } else {
+                                descEl.textContent = movieInfo.preview;
+                                this.textContent = 'Ver más';
+                            }
+                            expanded = !expanded;
+                        });
+                    }
+                }
+
+                // Configurar el botón del tráiler
+                const trailerLink = document.getElementById('link-trailer');
+                const imgElement = document.getElementById('movie-poster');
+                if (trailerLink && imgElement) {
+                    trailerLink.style.display = 'block';
+                    trailerLink.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        const imgSrc = imgElement.getAttribute('src');
+                        if (imgSrc) {
+                            showTrailer(imgSrc);
+                        }
+                    });
+                }
+            }
+            
+            if (image) {
+                const imgEl = document.getElementById('movie-poster');
+                if (imgEl) {
+                    imgEl.setAttribute('src', decodeURIComponent(image));
+                    if (title) imgEl.setAttribute('alt', decodeURIComponent(title));
+                }
+            }
+        } catch (e) {
+            // no crítico
+            console.warn('No se pudo aplicar parámetros de película:', e);
+        }
+
+        // Manejo de selección de horarios
+        document.querySelectorAll('.time-button').forEach(button => {
+            button.addEventListener('click', function() {
+                // Quitar selección anterior
+                document.querySelectorAll('.time-slot').forEach(slot => {
+                    slot.classList.remove('active');
+                });
+                document.querySelectorAll('.time-button').forEach(btn => {
+                    btn.classList.remove('selected');
+                });
+
+                // Marcar como seleccionado
+                this.classList.add('selected');
+                this.closest('.time-slot').classList.add('active');
+
+                // Actualizar enlaces de compra
+                let timeSlot = this.closest('.time-slot');
+                let buyLink = timeSlot.querySelector('.buy-link');
+                if (buyLink) {
+                    let time = this.getAttribute('data-time');
+                    let movieTitle = document.getElementById('movie-title').textContent;
+                    let location = this.closest('.location-group').querySelector('.location-name').textContent;
+                    buyLink.href = `Butacas.html?title=${encodeURIComponent(movieTitle)}&time=${encodeURIComponent(time)}&location=${encodeURIComponent(location)}`;
+                }
+            });
+        });
+    })();
+    </script>
+    </body>
+</html>

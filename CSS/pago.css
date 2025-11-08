@@ -1,0 +1,136 @@
+/* Estilos generales */
+body {
+    background-color: #ffffff;
+    color: #000000;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Legibilidad base para la página de pago */
+body {
+    font-size: 1.05rem;
+    font-weight: 600;
+    line-height: 1.45;
+}
+
+/* Responsive tweaks for Pago page */
+@media (max-width: 768px) {
+    body { font-size: 0.98rem; }
+    .site-logo { width: 280px; }
+    .payment-container { margin: 0 12px; }
+}
+@media (max-width: 576px) {
+    body { font-size: 0.95rem; }
+    .site-logo { width: 220px; }
+    .custom-btn-pagar { min-width: 100px; }
+}
+
+/* Navbar styles */
+.navbar-cinerostar {
+    background-color: #CC0000 !important;
+}
+
+.navbar-cinerostar .nav-link {
+    color: white !important;
+    font-weight: 500;
+    padding-bottom: 0.5rem;
+}
+
+.navbar-cinerostar .nav-link.active {
+    border-bottom: 3px solid #FFCC00;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.site-logo {
+    width: 400px;
+    height: 110px;
+    object-fit: contain;
+}
+
+/* Estilos específicos de la página de pago */
+.payment-container {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.custom-receipt-btn {
+    flex: 1;
+    border-radius: 4px;
+}
+
+.custom-receipt-btn.active {
+    background-color: #198754;
+    color: white;
+    border-color: #198754;
+}
+
+.custom-radio-card {
+    border: 1px solid #dee2e6;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.custom-radio-card:hover {
+    background-color: #f8f9fa;
+}
+
+.payment-details {
+    display: none;
+}
+
+.payment-details.active {
+    display: block;
+}
+
+.custom-yape-circle {
+    width: 12px;
+    height: 12px;
+    background-color: #dee2e6;
+    border-radius: 50%;
+}
+
+.custom-btn-pagar {
+    min-width: 120px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .payment-container {
+        margin: 0 15px;
+    }
+    
+    .site-logo {
+        width: 300px;
+        height: 83px;
+    }
+}
+.navbar-cinerostar {
+    background-color: #CC0000 !important;
+}
+
+.navbar-cinerostar .nav-link {
+    color: white !important;
+    font-weight: 500;
+    padding-bottom: 0.5rem;
+}
+
+.navbar-cinerostar .nav-link.active {
+    border-bottom: 3px solid #FFCC00;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.site-logo {
+    width: 400px;
+    height: 110px;
+    object-fit: contain;
+}
