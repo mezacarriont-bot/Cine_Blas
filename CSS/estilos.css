@@ -29,7 +29,8 @@ body {
 
 .movie-card img {
     width: 100%;
-    height: auto;
+    height: 260px; /* altura fija para un tamaño consistente entre secciones */
+    object-fit: cover; /* recorta sin deformar */
     border-radius: 4px;
     margin-bottom: 8px;
 }

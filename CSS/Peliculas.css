@@ -115,34 +115,59 @@
             margin-bottom: 20px;
             border: 1px solid #333;
             transition: transform 0.2s, box-shadow 0.2s;
+            height: 480px; /* Altura aumentada ligeramente para las tarjetas */
+            display: flex;
+            flex-direction: column;
+            width: 100%; /* Asegura que ocupe todo el ancho disponible */
         }
         .movie-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
         }
         .movie-info {
-            padding: 10px;
+            padding: 15px;
             background-color: rgba(0, 0, 0, 0.9);
+            flex: 1; /* Ocupa el espacio restante */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 170px; /* Altura mínima para la información (ajustada) */
         }
         .movie-format {
+            background-color: #CC0000; 
+            color: white;
             font-size: 0.8rem;
-            color: #ffffff;
+            padding: 3px 8px;
+            border-radius: 3px;
+            display: inline-block;
+            margin: 5px 3px;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+            font-weight: bold;
+            letter-spacing: 0.5px;
         }
         .movie-label {
             background-color: #CC0000; 
             color: white;
-            font-size: 0.7rem;
-            padding: 2px 5px;
+            font-size: 0.8rem;
+            padding: 3px 8px;
             border-radius: 3px;
             display: inline-block;
-            margin-top: 5px;
+            margin: 5px 3px;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+            font-weight: bold;
+            letter-spacing: 0.5px;
         }
         .movie-language {
-            color: #ffffff;
+            background-color: #38761d; /* Verde para idiomas/doblado/subtitulado */
+            color: white;
             font-size: 0.8rem;
+            padding: 3px 8px;
+            border-radius: 3px;
+            display: inline-block;
+            margin: 5px 3px;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+            font-weight: bold;
+            letter-spacing: 0.4px;
         }
         /* OFFCANVAS (Menús laterales de filtro) */
         .offcanvas {
@@ -215,10 +240,10 @@
 /* Ajustes específicos para las tarjetas de películas: tamaño de imagen y visibilidad de texto */
 .movie-card img.card-img-top {
     width: 100%;
-    /* Altura mayor para que la imagen no comprima el área de texto */
-    height: 260px;
+    height: 300px; /* Altura fija para la imagen */
     object-fit: cover; /* Mantener recorte centrado y proporcional */
     display: block;
+    flex: none; /* Evita que la imagen se estire */
 }
 
 .movie-info p {
@@ -235,8 +260,8 @@
     text-overflow: clip !important;
 }
 
-/* Etiquetas (formato / idioma / estreno) más compactas y centradas */
-.movie-format, .movie-language, .movie-label {
+/* Etiquetas (formato / estreno) más compactas y centradas */
+.movie-format, .movie-label {
     font-size: 0.82rem;
 }
 

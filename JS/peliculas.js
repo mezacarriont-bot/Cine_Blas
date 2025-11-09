@@ -187,13 +187,17 @@ function generarPeliculasParaDia(contenedor) {
             html += `
                 <div class="col">
                     <div class="movie-card">
-                        <a class="movie-link" href="${href}">
-                            <img src="${pelicula.imagen}" alt="${pelicula.titulo}" class="card-img-top">
+                        <a href="${href}" class="movie-link">
+                            <div class="image-container">
+                                <img src="${pelicula.imagen}" alt="${pelicula.titulo}" class="card-img-top">
+                            </div>
                             <div class="movie-info">
-                                <p class="mb-1 text-center text-truncate">${displayTitle}</p>
-                                <p class="movie-format text-center">${pelicula.formato}</p>
-                                <p class="movie-language text-center">${pelicula.idiomas.join(' / ')}</p>
-                                ${pelicula.estreno ? '<p class="movie-label text-center">Estreno</p>' : ''}
+                                <h3 class="movie-title text-center">${displayTitle}</h3>
+                                <div class="movie-tags">
+                                    <span class="movie-format">${pelicula.formato}</span>
+                                    ${pelicula.idiomas.map(idioma => `<span class="movie-language">${idioma}</span>`).join('')}
+                                    ${pelicula.estreno ? '<span class="movie-label">ESTRENO</span>' : ''}
+                                </div>
                             </div>
                         </a>
                         <button class="btn btn-trailer" onclick="showTrailer('${pelicula.imagen}')">
